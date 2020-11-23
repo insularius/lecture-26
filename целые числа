@@ -1,0 +1,108 @@
+//int L;
+//cout << "L = "; cin >> L;
+//cout << "В метрах = " << int(L / 100) << endl;
+
+
+//int M; 
+//cout << "Масса кг = "; cin >> M;
+//cout << "Тонн = " << int(M / 1000) << endl;
+
+
+//int Bites;
+//cout << "Bites = "; cin >> Bites;
+//cout << "Kbs = " << int(Bites / 1024) << endl;
+
+//int a, b;
+//cout << "a = "; cin >> a;
+//cout << "b = "; cin >> b;
+//cout << "Количество отрезков b, размщенных на отрезке а = " < < int(a / b) << endl;
+
+//int a, b;
+//cout << "a = "; cin >> a;
+//cout << "b = "; cin >> b;
+//cout << "Длина незанятой части отрезка А = " << int(a % b) << endl;
+
+
+//int num;
+//cout << "Enter num = "; cin >> num;
+//cout << "a = " << int(num / 10) << endl;
+//cout << "b = " << int(num % 10) << endl;
+//
+//
+//int a, b;
+//a = int(num / 10);
+//b = num % 10;
+//cout << "Сумма = " << a+b << endl;
+//cout << "Произведение = " << a*b << endl;
+////cout << "Обмен = " << num << "\t" << b * 10 + a << endl;
+////cout << "s = "; cin >> s;
+//cout << "Сотня = " << num / 100 << endl;
+
+//int 9
+//int num, s;
+//cout << "Enter num = "; cin >> num;
+//cout << "S = " << int(num / 100) << endl;
+
+
+//int num;
+//cout << "Enter num = "; cin >> num;
+//cout << "E = " << int(num % 10) << endl;
+//cout << "D = " << int(num / 10) % 10 << endl;
+//
+//int e = num % 10;
+//int d = int(num / 10) % 10;
+//cout << "Summ = " << e + d << endl;
+//cout << "Proizv = " << e * d << endl;
+//
+////341 143
+//int s = num / 100;
+//cout << "S = " << num / 100 << endl;
+//cout << "Naoborot " << num << "\t"<< s + d * 10 + 1 * 100 << endl;
+//
+//cout << "Pomenyali mestami Sotnu s edinicei " << num << "\t"<<int(num/10)%10 << num/100 << num%10 << endl;
+//cout << "Поменяли местами единицу с десятком "<< num << "\t" << num/100 << num%10 << int(num/10)%10 << endl;
+//cout << "Меняет сотни и десятки " << num << "\t" << int(num / 10) % 10 << num / 100 << num % 10 << endl;
+//cout << "Поменяли местами единицу с десятком " << num << "\t" << num / 100 << num % 10 << int(num / 10) % 10 << endl;
+
+//int num;
+//cout << "Celoe 4islo = "; cin >> num;
+//int a = num / 100;
+//cout << "Sotnya = " << a % 10 << endl;
+
+
+//int num;
+//cout << "Celoe 4islo = "; cin >> num;
+//int a = num / 1000;
+//cout << "Sotnya = " << a % 10 << endl;
+
+
+int N;
+cout << "Прошедшие секунды = "; cin >> N;
+cout << "Полных минут = "<< N / 60 << endl;
+cout << "Полных часов = " << N / 3600 << endl;
+cout << "Секунды, прошедшие с начала последней минуты " << N % 60 << endl;
+cout << "Секунды, прошедшие с начала последнего часа " << N % 3600 << endl;
+cout << "Полные минуты, прошедшие с начала последнего часа " << N% 60 << endl;
+
+
+
+
+//S = num / 100;
+//d = int(num10) % 10;
+//e = num % 10;
+
+
+
+}
+
+//25 / 10 = 2.5 = 2;
+//
+//
+//int a = 10; 
+//int b = 1 / 3 = 3; 
+//double c = int(a/3);
+//int b = int(7 / 2) * 2 = 7;
+//
+//int a = 10 / 3; 
+//10 % 3 = 1;
+//12 % 3 = 0;
