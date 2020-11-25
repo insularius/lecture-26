@@ -1,0 +1,220 @@
+//boolean1
+	//int a;
+	//cout << "Enter a = "; cin >> a;
+	//bool is_positive = (a > 0);
+	//cout << boolalpha <<"Is positive? " <<is_positive << endl;
+
+	//booelan2
+//int a;
+//cout << "Enter a = "; cin >> a;
+//bool is_nechetnoe = (a % 2 != 0);
+//cout << boolalpha << "Is chetnoe? " << is_nechetnoe << endl;
+
+//bolean3
+/*int a;
+cout << "Enter a = "; cin >> a;
+bool is_chetnoe = ()*/
+
+//int a, b;
+//cout << "Enter a = "; cin >> a;
+//cout << "Enter b = "; cin >> b;
+//bool b1 = (a > 2);
+//bool b2 = (b <= 3);
+//bool b3 = b1 && b2;
+//cout << boolalpha << "b3 " << b3 << endl;
+//cout << boolalpha << "b3 " << ((a>2) &&(b<=3)) << endl;
+
+//int a, b;
+//cout << "Enter a = "; cin >> a;
+//cout << "Enter b = "; cin >> b;
+//bool b1 = (a >= 0);
+//bool b2 = (b < -2);
+//bool b3 = b1 && b2;
+//cout << boolalpha << "b3 " << b3 << endl;
+
+
+//int a, b, c;
+//cout << "Enter a = "; cin >> a;
+//cout << "Enter b = "; cin >> b;
+//cout << "Enter b = "; cin >> c;
+//bool b1 = (a <b );
+//bool b2 = (b < c);
+//bool b3 = (a <b) && (b < c );
+//bool b3 = b1 && b2;
+//cout << boolalpha << "b3 " << b3 << endl;
+
+//int a, b, c;
+//cout << "Enter a = "; cin >> a;
+//cout << "Enter b = "; cin >> b;
+//cout << "Enter c = "; cin >> c;
+////bool b1 = ((a < b) || (b < c) && (a > b) && (b < c));
+//bool b1 = (a < b) && (b < c);
+//bool b2 = (a > b) && (b > c);
+//bool b3 = b1 || b2;
+//cout << boolalpha << "b3 " << b3 << endl;
+
+
+//int a, b;
+//cout << "Enter a = "; cin >> a;
+//cout << "Enter b = "; cin >> b;
+//bool b1 = (a % 2 != 0);
+//bool b2 = (b % 2 != 0);
+//cout << boolalpha << "B1 " << b1 << endl;
+//cout << boolalpha << "B2 " << b2 << endl;
+
+//int a, b;
+//cout << "Enter a = "; cin >> a;
+//cout << "Enter b = "; cin >> b;
+//bool b1 = (a % 2 != 0);
+//bool b2 = (b % 2 != 0);
+//bool b3 = (a % 2 != 0) || (b % 2 != 0);
+//cout << boolalpha << "B1 " << b1 << endl;
+//cout << boolalpha << "B2 " << b2 << endl;
+//cout << boolalpha << "B3 " << b3 << endl;
+
+
+//int a, b;
+//cout << "Enter a = "; cin >> a;
+//cout << "Enter b = "; cin >> b;
+//bool b1 = (a + b)%2 !=0;
+//cout << boolalpha << "B1 " << b1 << endl;
+
+//bool b1 = a % 2 == 0;
+//bool b2 = b % 2 == 0;
+//bool b3 = (b1 + b2) == 1;
+
+
+//boolean 11
+
+//int a, b;
+//cout << "Enter a = "; cin >> a;
+//cout << "Enter b = "; cin >> b;
+////bool b1 = (a % 2 != 0);
+////bool b2 = (b % 2 == 0);
+////bool b3 = b1 && b2;
+////bool b4 = b1 && b2;
+//bool b1 = (a + b) % 2 == 0;
+//bool b2 = (a + b) % 2 != 0;
+//cout << boolalpha <<"b1 = " << b1 << endl;
+//cout << boolalpha <<"b2 = " << b2 << endl;
+
+
+//bollean 12
+//int a, b, c; 
+//cout << "Enter a = "; cin >> a;
+//cout << "Enter b = "; cin >> b;
+//cout << "Enter c = "; cin >> c;
+//bool b1 = (a > 0);
+//bool b2 = (b > 0);
+//bool b3 = (c > 0);
+//cout << boolalpha << "b1 positive? " << b1 << endl;
+//cout << boolalpha << "b2 positive? " << b2 << endl;
+//cout << boolalpha << "b3 positive? " << b3 << endl;
+
+//boolean13
+//int a, b, c; 
+//cout << "Enter a = "; cin >> a;
+//cout << "Enter b = "; cin >> b;
+//cout << "Enter c = "; cin >> c;
+//bool b1 = (a > 0);
+//bool b2 = (b > 0);
+//bool b3 = (c > 0);
+//bool b4 = b1 || b2 || b3;
+//cout << boolalpha << "b1 positive? " << b1 << endl;
+//cout << boolalpha << "b2 positive? " << b2 << endl;
+//cout << boolalpha << "b3 positive? " << b3 << endl;
+//cout << boolalpha << "Est' odin positive? " << b4 << endl;
+
+//boolean 14
+
+//int a, b, c;
+//cout << "Enter a = "; cin >> a;
+//cout << "Enter b = "; cin >> b;
+//cout << "Enter c = "; cin >> c;
+//bool b1 = (a > 0);
+//bool b2 = (b > 0);
+//bool b3 = (c > 0);
+//bool b4 = (b1 + b2 + b3) == 1;
+//cout << "b4 = " << b4 << endl;
+
+
+//boleean 15
+//int a, b, c;
+//cout << "Enter a = "; cin >> a;
+//cout << "Enter b = "; cin >> b;
+//cout << "Enter c = "; cin >> c;
+//bool b1 = (a > 0);
+//bool b2 = (b > 0);
+//bool b3 = (c > 0);
+//bool b4 = (b1 + b2 + b3) == 2;
+//cout << boolalpha <<"b4 = " << b4 << endl;
+
+
+//boolean 16
+//int a, b, c;
+//cout << "Enter a = "; cin >> a;
+//bool b1 = (a % 2 == 0);
+//bool b2 = ((a / 10) > 0) && ((a / 100) == 0);
+//cout << (b1 && b2) << endl;
+
+
+
+//boolean 17
+
+//int a;
+//cout << "Enter a = "; cin >> a;
+//bool b1 = (a % 2 != 0);
+//bool b2 = ((a / 100) > 0) && ((a / 1000) == 0);
+//cout << boolalpha <<(b1 && b2) << endl;
+
+
+//boolean 18
+
+//int a, b, c;
+//cout << "Enter a = "; cin >> a;
+//cout << "Enter b = "; cin >> b;
+//cout << "Enter c = "; cin >> c;
+//bool b1 = a == b || b == c || a == c;
+//cout << boolalpha << "b1 = " << b1 << endl;
+
+//boolean 19
+
+int a, b, c; 
+cout << "Enter a = "; cin >> a;
+cout << "Enter b = "; cin >> b;
+cout << "Enter c = "; cin >> c;
+bool b1 = a == -b || b == -c || a == -c;
+cout << boolalpha << "b1 = " << b1 << endl;
+//bool b1 = (a == -b);
+//bool b2 = (b == -c);
+//bool b3 = (a == -c);
+//bool b4 = (b1 + b2 + b3) > 0;
+//cout << boolalpha << "b4 = " << b4 << endl;
+
+
+//bollean 20
+S, D, E (формулы)
+
+}
+
+//25 / 10 = 2.5 = 2;
+//
+//
+//int a = 10; 
+//int b = 1 / 3 = 3; 
+//double c = int(a/3);
+//int b = int(7 / 2) * 2 = 7;
+//
+//int a = 10 / 3; 
+//10 % 3 = 1;
+//12 % 3 = 0;
+
+
+
+
+//a = k++ + 2 = 4; use and up постфикс
+//a = ++k + 2 = 5; up and up префикс
+//декремент уменьш на 1
+//инкремент +1 
+//k-- = постфикс
+//--k = префикс
