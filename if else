@@ -1,0 +1,339 @@
+//02.12.2020
+
+//if1
+//int a; 
+//cout << "Enter a = "; cin >> a;
+//
+//if (a > 0) {
+//	cout << "A is positive" << endl;
+//
+//}
+//
+//while (a < 10) {
+//	a++;
+//	cout << "A = "<< a << endl;
+//}
+
+//if2
+//int a; 
+//cin >> a;
+//
+//if (a > 0) {
+//	a++;
+//}
+//else {
+//	a -= 2;
+//
+//}
+//
+//cout << a << endl;
+
+//if3
+
+//int a;
+//cin >> a;
+//if (a > 0) {
+//	a++;
+//}
+//
+//else if (a < 0) {
+//	a - 2;
+//}
+//
+//else if (a == 0) {
+//	a = 10;
+//}
+//cout << "A = " << a << endl;
+
+
+//if4 
+//int a, b, c, n;
+//int n = 0;
+//cin >> a; 
+//cin >> b;
+//cin >> c;
+//if (a > 0) {
+//	n++;
+//}
+//else if (b > 0) {
+//	n++;
+//}
+//else if (c > 0) {
+//	n++;
+//}
+//cout << "N = " << n << endl;
+
+//if5
+//int a, b, c;
+//int n = 0;
+//int e = 0;
+//cin >> a; 
+//cin >> b;
+//cin >> c;
+//if (a > 0) {
+//	n++;
+//}
+//else if (b > 0) {
+//	n++;
+//}
+//else if (c > 0) {
+//	n++;
+//}
+//
+//else if (a < 0) {
+//	e--;
+//}
+//else if (b < 0) {
+//	e--;
+//}
+//else if (c < 0) {
+//	e--;
+//}
+
+
+//if6
+//int a, b;
+//cin >> a;
+//cin >> b;
+//if (a > b) {
+//	cout << "A larger than b" << endl;
+//}
+//else (a < b); {
+//	cout << "B larger than a" << endl;
+//}
+
+//if7
+//int a, b;
+//cin >> a;
+//cin >> b;
+//if (a > b) {
+//	cout << "A larger than b" << endl;
+//
+//}
+//else if (a < b) {
+//	cout << "B larger than a" << endl;
+//
+//}
+//cout << "Порядковый номер = " << b << endl;
+
+//if8
+
+//int a, b;
+//cin >> a;
+//cin >> b;
+//if (a > b) {
+//	cout << "a larger than b" << endl;
+//}
+//
+//else if (a < b) {
+//	cout << "b larger than a" << endl;
+//}
+//cout << "Largest = " << b << endl;
+//cout << "Smallest = " << a << endl;
+
+
+//if9
+
+//double a, b;
+//cin >> a;
+//cin >> b;
+//if (a > b) {
+//	double temp = a;
+//	a = b;
+//	b = temp;
+//	swap(a, b);
+//}
+//cout << a << "\t" << b << endl;
+
+//if 10
+
+//int a, b;
+//cin >> a;
+//cin >> b;
+//if (a != b) {
+//	int temp = a;
+//	a = a + b;
+//	b = temp + b;
+//}
+//else if (a == b) {
+//	a = 0;
+//	b = 0;
+//}
+//cout << "A = " << a << endl;
+//cout << "B = " << b << endl;
+
+//if 11
+
+//int a, b;
+//cin >> a;
+//cin >> b;
+//if (a != b) {
+//	a > b;
+//	b = a;
+//}
+//else if (a == b) {
+//	a = 0;
+//	b = 0;
+//}
+//cout << "A = " << a << endl;
+//cout << "B = " << b << endl;
+
+//if 12
+//int a, b, c;
+//cin >> a;
+//cin >> b;
+//cin >> c;
+////if (a > b) {
+////	cout << "A larger than b" << endl;
+////}
+////else if (b > c) {
+////	cout << "B larger than c" << endl;
+////}
+////else if (c < a) {
+////	cout << "C is the smallest" << endl;
+////}
+//if (a < b && a < c) {
+//	cout << "a is the smallest" << endl;
+//}
+
+
+//if 13
+//int a, b, c;
+//cin >> a;
+//cin >> b;
+//cin >> c;
+//if (a < b && b> c) {
+//	cout << "B is middle number" << endl;
+//}
+
+
+//if 14
+
+//int a, b, c;
+//cin >> a;
+//cin >> b;
+//cin >> c;
+//if (a < b && a < c) {
+//	cout << "A is the smallest" << endl;
+//}
+//
+//if (b > a && c < b) {
+//	cout << "B is the biggest" << endl;
+//}
+
+//if 15
+//int a, b, c;
+//cin >> a;
+//cin >> b;
+//cin >> c;
+//if (a > b && a > c) {
+//	cout << "Biggest number is A" << endl;
+//}
+//if (b < a && b > c) {
+//	cout << "B is the second biggest number" << endl;
+//}
+//	cout << "Sum biggest numbers = " << a + b << endl;
+
+
+//if16
+//double a, b, c;
+//cin >> a;
+//cin >> b;
+//cin >> c;
+//if (a > b && b > c) {
+//	a *= 2;
+//	b *= 2;
+//	c *= 2;
+//}
+//else  {
+//	a = -a;
+//	b = -b;
+//	c = -c;
+//}
+//cout << "a = " << a << endl;
+//cout << "b = " << b << endl;
+//cout << "c = " << c << endl;
+
+
+//if17
+
+//double a, b, c;
+//cin >> a;
+//cin >> b;
+//cin >> c;
+//if (a > b && b > c) {
+//	a *= 2;
+//	b *= 2;
+//	c *= 2;
+//}
+//else if (a < b && b < c) {
+//	a *= 2;
+//	b *= 2;
+//	c *= 2;
+//}
+//else  {
+//	a = -a;
+//	b = -b;
+//	c = -c;
+//}
+//cout << "a = " << a << endl;
+//cout << "b = " << b << endl;
+//cout << "c = " << c << endl;
+
+
+
+//if18
+//int a;
+//cin >> a;
+//int b = 5;
+//int c = 5;
+//
+//if (a != b && a != c) {
+//	cout << "Порядковый номер а = " << a << endl;
+//}
+
+//if 19
+//int a;
+//cin >> a;
+//int b = 5;
+//int c = 5;
+//int d = 5;
+//if (a != b && a != c && a != d) {
+//	cout << "Порядковый номер а = " << a << endl;
+//}
+
+//if20
+
+//int a, b, c;
+//cin >> a;
+//cin >> b;
+//cin >> c;
+//int AB = abs(a - b);
+//int AC = abs(a - c);
+//cout << "Ab = " << AB << endl;
+//cout << "AC = " << AC << endl;
+//
+//if (AB > AC) {
+//	cout << "C ближе" << endl;
+//}
+//else if (AB < AC) {
+//	cout << "B ближе" << endl;
+//
+//}
+
+
+//if21
+
+int x, y;
+cin >> x;
+cin >> y;
+
+if (x != 0 && y == 0) {
+	cout << "";
+}
+
+else if (x == 0 && y != 0){
+
+}
+
+
