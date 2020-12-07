@@ -1,0 +1,336 @@
+//case1
+//
+//int k;
+//cout << "Введите целое число в диапазоне 1-7:  ";
+//cin >> k;
+//switch (k) {
+//case 1: cout << "Понедельник\n"; break;
+//case 2: cout << "Вторник\n"; break;
+//case 3: cout << "Среда\n"; break;
+//case 4: cout << "Четверг\n"; break;
+//case 5: cout << "Пятница\n"; break;
+//case 6: cout << "Суббота\n"; break;
+//case 7: cout << "Воскресенье\n"; break;
+//default: cout << "Нет такого дня недели.\n";
+//}
+
+
+//case2
+//int k;
+//cin >> k;
+//switch (k) {
+//case 1: cout << "Плохо\n"; break;
+//case 2: cout << "Неудовлетворительно\n"; break;
+//case 3: cout << "Удовлетворительно\n"; break;
+//case 4: cout << "Хорошо\n"; break;
+//case 5: cout << "Отлично\n"; break;
+//default: cout << "Неверное число"; break;
+//}
+
+//case3
+//int k; 
+//cout << "Введите порядковый номер месяца в диапазоне 1-12 = ";
+//cin >> k;
+//switch (k) {
+//case 12:
+//case 1:
+//case 2:
+//	cout << "Зима"; break;
+//case 3: 
+//case 4:
+//case 5:
+//	cout << "Весна"; break;
+//case 6:
+//case 7:
+//case 8:
+//	cout << "Лето"; break;
+//case 9:
+//case 10:
+//case 11:
+//	cout << "Осень"; break;
+//}
+
+
+//case4
+//int k;
+//cout << "Введите порядковый номер месяца в диапазоне 1-12 = ";
+//cin >> k;
+//switch (k) {
+//case 12:
+//case 1:
+//case 2:
+//	cout << "Зима\n"; break;
+//case 3:
+//case 4:
+//case 5:
+//	cout << "Весна\n"; break;
+//case 6:
+//case 7:
+//case 8:
+//	cout << "Лето\n"; break;
+//case 9:
+//case 10:
+//case 11:
+//	cout << "Осень\n"; break;
+//default: cout << "Неверное число"; break;
+//}
+//switch (k) {
+//case 1: cout << "В январе 31 день"; break;
+//case 2: cout << "В феврале 31 день"; break;
+//case 3: cout << "В марте 31 день"; break;
+//case 4: cout << "В апреле 31 день"; break;	
+//case 5: cout << "В мае 31 день"; break;
+//case 6: cout << "В июне 31 день"; break;
+//case 7: cout << "В июле 31 день"; break;
+//case 8: cout << "В августе 31 день"; break;
+//case 9: cout << "В сентябре 31 день"; break;
+//case 10: cout << "В октябре 31 день"; break;
+//case 11: cout << "В ноябре 31 день"; break;
+//case 12: cout << "В декабре 31 день"; break;
+//}
+
+
+
+//case 5
+//int n, a, b;
+//cout << "Введите n в диапазоне 1-4 = ";
+//cin >> n;
+//cout << "Введите число a = ";
+//cin >> a;
+//cout << "Введите число b (не равно нулю) = "; 
+//cin >> b;
+//switch (n)
+//{
+//case 1: cout << "Сложение = " << a + b << endl; break;
+//case 2: cout << "Вычитание = " << a - b << endl; break;
+//case 3: cout << "Умножение = " << a * b << endl; break;
+//case 4: cout << "Деление = " << a / b << endl; break;
+//}
+
+
+//case 6
+//int num, dl;
+//cout << "Введите длину отрезка: ";
+//cin >> dl;
+//cout << "Введите величину (в диапазоне 1-5): ";
+//cin >> num;
+//switch (num) {
+//case 1: cout << "Длина в дециметрах равна = " << dl; break;
+//case 2: cout << "Длина в километрах равна = " << dl; break;
+//case 3: cout << "Длина в метрах равна = " << dl; break;
+//case 4: cout << "Длина в миллиметрах равна = " << dl; break;
+//case 5: cout << "Длина в сантиметрах равна = " << dl; break;
+//default: cout << "Неверный диапазон"; break;
+//}
+
+//case 7
+//int num, mass; 
+//cout << "Введите массу тела: ";
+//cin >> mass; 
+//cout << "Введите единицу массы (в диапазоне 1-5): ";
+//cin >> num;
+//switch (num) {
+//case 1: cout << "Масса телла в килограммах равна: " << mass << "кг"; break;
+//case 2: cout << "Масса телла в миллиграммах равна: " << mass << "мг"; break;
+//case 3: cout << "Масса телла в граммах равна: " << mass << "гр"; break;
+//case 4: cout << "Масса телла в тоннах равна: " << mass << "т"; break;
+//case 5: cout << "Масса телла в центнерах равна: " << mass << "цт"; break;
+//
+//}
+
+//case 8
+//int d, m;
+//cout << "Введите день: ";
+//cin >> d;
+//cout << "Введите месяц: ";
+//cin >> m;
+//switch (d) {
+//case 1: cout << "Введённому дню предшествует: " << 31 << "\n"; break;
+//case 2: cout << "Введённому дню предшествует: " << d - 1 << "\n"; break;
+//case 3: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 4: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 5: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 6: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 7: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 8: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 9: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 10: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 12: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 13: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 14: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 15: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 16: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 17: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 18: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 19: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 20: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 21: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 22: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 23: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 24: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 25: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 26: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 27: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 28: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 29: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 30: cout << "Введённому дню предшествует: " << d - 1; break;
+//case 31: cout << "Введённому дню предшествует: " << d - 1; break;
+//default: cout << "Введённое число больше разрешённого"; break;
+//}
+//switch (m) {
+//case 1: cout << "Введёному месяцу предшествует: " << m - 1; break;
+//case 2: cout << "Введёному месяцу предшествует: " << m - 1; break;
+//case 3: cout << "Введёному месяцу предшествует: " << m - 1; break;
+//case 4: cout << "Введёному месяцу предшествует: " << m - 1; break;
+//case 5: cout << "Введёному месяцу предшествует: " << m - 1; break;
+//case 6: cout << "Введёному месяцу предшествует: " << m - 1; break;
+//case 7: cout << "Введёному месяцу предшествует: " << m - 1; break;
+//case 8: cout << "Введёному месяцу предшествует: " << m - 1; break;
+//case 9: cout << "Введёному месяцу предшествует: " << m - 1; break;
+//case 10: cout << "Введёному месяцу предшествует: " << m - 1; break;
+//case 11: cout << "Введёному месяцу предшествует: " << m - 1; break;
+//case 12: cout << "Введёному месяцу предшествует: " << m - 1; break;
+//}
+
+//case 8
+//int d, m;
+//cin >> d >> m;
+//switch (d) {
+//case 1: 
+//	switch (m) {
+//	case 2: case 4: case  6: case 8: case 9: case 11:
+//		d = 1;
+//		m--;
+//		break;
+//	case 5: case 7: case 10: case 12:
+//		d = 30;
+//		m--;
+//		break;
+//	case 3:
+//		d = 28;
+//		m--;
+		/*break;*/
+//	}
+//default: 
+//	d--;
+//	break;
+//}
+//cout << d << "." << m << endl;
+
+
+
+//case 9
+//int d, m; 
+//cin >> d >> m;
+//switch (d) {
+//case 1: 
+//	switch (m) {
+//	case 2: case 4: case  6: case 8: case 9: case 11:
+//		d = 1;
+//		m++;
+//		break;
+//	case 5: case 7: case 10: case 12:
+//		d = 30;
+//		m++;
+//		break;
+//	case 1:
+//		d = 31;								НЕПРАВИЛЬНО
+//		m = 12;
+//		break;
+//	case 3:
+//		d = 28;
+//		m++;
+//	}
+//default: 
+//	d++;
+//	break;
+//}
+//cout << d << "." << m << endl;
+
+//case 10
+//int c, n; 
+//cout << "Введитите направление (1-4) =  ";
+//cin >> c;
+//cout << "Введите команду (0, 1, -1) = ";
+//cin >> n;
+//
+//switch (c) {
+//case 1: cout << "Робот направился на Север"; break;
+//case 2: cout << "Робот направился на Запад"; break;
+//case 3: cout << "Робот направился на Юг"; break;
+//case 4: cout << "Робот направился на Восток"; break;
+//default: cout << "404 NOT FOUND"; break;
+//}
+//
+//switch (n) {
+//case 0: cout << " и продолжил движение"; break;
+//case 1: cout << " и повернул налево"; break;
+//case -1: cout << " и повернул направо"; break;
+//}
+
+//case 10
+//char c;
+//int n;
+//cin >> c;
+//cin >> n;
+//switch (c) {
+//case 'n':
+//	if (n == 1) c = 'w';
+//	else if (n == -1) c = 'e';
+//	break;
+//}
+
+
+
+//case 11
+//int c, n1, n2; 
+//cout << "Введите исходную локацию локатора (1-4) = ";
+//cin >> c;
+//cout << "Введите изменившееся направление локатора (1-4) = ";
+//cin >> n1;
+//cout << "Введите действие локатора (1, -1, 2) = ";
+//cin >> n2;
+//switch (c) {
+//case 1: cout << "Локатор изначально ориентирован на Север \n"; break;
+//case 2: cout << "Локатор изначально ориентирован на Запад\n"; break;
+//case 3: cout << "Локатор изначально ориентирован на Юг\n"; break;
+//case 4: cout << "Локатор изначально ориентирован на Восток\n"; break;
+//}
+//switch (n1) {
+//case 1: cout << "Локатор изменил ориентирование на Север\n"; break;
+//case 2: cout << "Локатор изменил ориентирование на Запад\n"; break;
+//case 3: cout << "Локатор изменил ориентирование на Юг\n"; break;
+//case 4: cout << "Локатор изменил ориентирование на Восток\n"; break;
+//}
+//switch (n2) {
+//case 1: cout << "Локатор повернулся налево"; break;
+//case -1: cout << "Локатор повернулся направо"; break;
+//case 2: cout << "Локатор повернулся на 180°"; break;
+//}
+
+//case 12
+//int r, n; 
+//cout << "Введите радиус окружности = "; 
+//cin >> r;
+//cout << "Введите элемент окружности (2-4) = ";
+//cin >> n;
+//switch (n) {
+//case 2: cout << "Диаметр равен = " << 2 * r << "см"; break;
+//case 3: cout << "Длина равна = " << 2 * 3.14 * r << "см"; break;
+//case 4: cout << "Площадь круга равна = " << 3.14 * pow(r, 2) << "см"; break;
+//default: cout << "404 NOT FOUND"; break;
+//
+//}
+
+
+//case 13
+int e, a, c, h, S;
+cout << "Введите катет = "; 
+cin >> a;
+cout << "Введите элемент равнобедренного прямоугольника треугольника"; 
+cin >> e;
+switch (e) {
+case 2: cout << "Гипотенуза равна = " << a * abs(2); break;
+case 3: cout << "Высота равна = " << c / 2; break;
+case 4: cout << "Площадь равна = " << c * h/2; break;
+}
