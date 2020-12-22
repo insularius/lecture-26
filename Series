@@ -1,0 +1,83 @@
+//series 1
+
+//int num = 0;
+//int sum = 0;
+//for (int i = 1; i <= 10; i++) {
+//			num = rand() % 10 + 1;
+//			cout << num << " ";
+//			sum += num;
+//		}
+//		cout << endl;
+//		cout << "Сумма: " << sum << endl;
+
+
+//series 2
+//int num = 0;
+//int sum = 1;
+//for (int i = 1; i <= 10; i++) {
+//	num = rand() % 10 + 1;
+//	cout << num << " ";
+//	sum *= num;
+//}
+//	cout << endl;
+//	cout << "Произведение: " << sum << endl;
+
+
+//series 3
+	/*int num;
+	int sum = 0;
+	for (int i = 1; i <= 10; i++) {
+		num = rand() % 10 + 1;
+		cout << num << " ";
+		sum += num;
+	}
+	cout << endl;
+	cout << "Среднее арифм: " << sum / 10 << endl;*/
+
+
+//series 4
+	/*int num;
+	double sum = 0;
+	double mult = 1;
+	for (int i = 1; i <= 10; i++) {
+		num = rand() % 10 + 1;
+		cout << num << " ";
+		sum += num;
+		mult *= num;
+	}
+	cout << endl;
+	cout << "Сумма: " << sum<< endl;
+	cout << "Произведение: " << mult << endl;*/
+
+
+//series 5
+
+	
+//series 8
+//int n;
+//cin >> n;
+//int k = 0;
+//int num = 0;
+//for (int i = 1; i <= n; i++) {
+//	k = i;
+//	cout << k;
+//
+//	if (k % 2 == 0) {
+//		num += 1;
+//	}
+//	
+//}
+//cout << endl;
+//cout << "Количество чётных: " << num;
+
+//series 10
+
+//int n;
+//cin >> n;
+//int num;
+//bool with_positive = false;
+//for (int i = 0; i < n; i++) {
+//	cin >> num;
+//	if (num > 0) with_positive = true;
+//}
+//cout << boolalpha << with_positive << endl;
