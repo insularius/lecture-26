@@ -81,3 +81,104 @@
 //	if (num > 0) with_positive = true;
 //}
 //cout << boolalpha << with_positive << endl;
+
+
+
+//series 11
+//int k, n;
+//int num;
+//bool lower_num = false;
+//cin >> n;
+//cin >> k;
+//
+//for (int i = 0; i < n; i++) {
+//	cin >> num;
+//	if (num < k) lower_num = true;
+//	
+//}
+//cout << boolalpha << lower_num << endl;
+
+//series 12
+//int num;
+//int n;
+//int num1 = 0;
+//cin >> n;
+//
+//for (int i= 0; i < n; i++) {
+//	cin >> num;
+//	num1++;
+//	if (num == 0) break;
+//}
+//cout << endl;
+//cout << "Количество чисел в наборе: " << num1 << endl;
+
+
+//series 13
+
+//int num;
+//int n;
+//int num1 = 0;
+//int sum = 0;
+//cin >> n;
+//
+//for (int i = 0; i < n; i++) {
+//	cin >> num;
+//	num1++;
+//	sum += num;
+//	if (num < 0) break;
+//		
+//	
+//}
+//cout << endl;
+//cout << "Количество чисел в наборе: " << num1 << endl;
+//cout << "Сумма: " << sum << endl;
+
+
+
+//series 14
+
+//int k;
+//int num;
+//int n;
+//int lower = 0;
+//cout << "Введите количество числе в наборе" << endl;
+//cin >> n;
+//cout << "Размер набора: " << n << endl;
+//cout << "Введите число К" << endl;
+//cin >> k;
+//cout << "Число К: " << k << endl;
+//cout << "Вводите числа набора" << endl;
+//
+//for (int i = 0; i < n; i++) {
+//	cin >> num;
+//
+//	if (num < k) {
+//		lower++;
+//	}
+//	if (num == 0) break;
+//}
+//
+//cout << "Количество чисел в наборе, меньших К: " << lower << endl;
+
+
+
+//series 15
+//
+//int k, num;
+
+
+
+//series 17
+int n;
+cout << "Enter n: "; cin >> n;
+float b, num;
+cout << "Enter b = "; cin >> b;
+for (int i = 0; i < n; i++) {
+	cin >> num;
+	if (num >b)
+	cout << num << endl;
+	else {
+		cout << b << endl;
+		cout << num << endl;
+	}
+}
