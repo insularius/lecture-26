@@ -1,0 +1,159 @@
+//int a = 5; 
+//int* pa = &a;
+//cout << pa << endl;
+//cout << *pa << endl;
+
+
+//указатели
+//int a = 5, b = 2;
+//Foo(&a, &b);
+//cout << a << "\t" << b << endl;
+
+//int a, b;
+//cin >> a >> b;
+//int* pa = &a;
+//int* pb = &b;
+//if (*pa > * pb) cout << "A is bigger" << *pa;
+//else cout << "B is bigger" << endl;
+
+
+//int a;
+//cin >> a;
+//int* pa = &a;
+//if (*pa > 0) cout << "+" << endl;
+//else cout << "-" << endl;
+
+
+//int a = 5, b = 2, temp;
+//int* pa = &a;
+//int* pb = &b;
+//for (int i = 0; i < 1; i++) {
+//	temp = 0;
+//	temp = *pb; 
+//	cout <<"a = b: " <<temp << endl;
+//	temp = *pa;
+//	cout << "b = a: "<<temp << endl;
+//}
+
+
+//int a = 5, b = 3;
+//char c;
+//cin >> c;
+//int* pa = &a;
+//int* pb = &b;
+//switch (c) {
+//case '+': cout << *pa + *pb; break;
+//case '-': cout << *pa - *pb; break;
+//case '*': cout << *pa * *pb; break;
+//case '/': cout << *pa / *pb; break;
+//}
+
+
+//int a[5] = {1, 5, 6, 9, 11};
+//int* pa = a;
+//int sum = 0;
+//for (int i = 0; i < 5; i++) {
+//	cout << *pa << "\t" << endl;
+//	sum += *pa;
+//	pa++;
+//}
+//cout << sum << endl;
+//
+//int a[n];
+//int sum = 0;
+//int* pa = a;
+//for (int i = 0; i < n; i++) {
+//	cin >> a[i];
+//	sum += *pa;
+//	pa++;
+//}
+//cout << sum;
+//
+//int a[n];
+//int* pa = a;
+//int sum = 0;
+//RandArray(a);
+//for (int i = 0; i < n; i++) {
+//	sum += *pa;
+//	pa++;
+//}
+//cout << sum;
+
+
+
+
+//1
+//int a = 5, b = 4;
+//int* pa = &a;
+//int* pb = &b;
+//int c = *pa + *pb;
+//cout << c << endl;
+//cout << &c << endl;
+
+
+//2
+//int a = 2, b = 5;
+//int* p1 = &a, * p2 = &b;
+//*p1 = 10;
+//cout << *p1 - *p2;
+
+//3
+//double a = 2.5, b = 5.2, res;
+//double* p1 = &a, *p2 = &b;
+//res = *p1 - *p2;
+//cout << res;
+
+//4
+//const int SIZE = 10;
+//int A[SIZE] = { 1,2,3,4,5,6,7,8,9,10 };
+//int* p = A;
+//for (int i = 0; i < SIZE; i++) {
+//	cout << *p;
+//	p++;
+//}
+	
+//5
+//int a[n];
+//int* pa = a;
+//RandArray(a);
+//for (int i = 0; i < n; i++) {
+//	cout << *pa << "\t";
+//	pa++;
+//}
+
+//6 a[10]
+//int a[n];
+//int* pa = a;
+//for (int i = 1; i < n; i++) {
+//	cin >> a[i];
+//	pa++;
+//	if (*pa < 0 && *pa !=0) cout << "индекс " << i << " само число " << *pa << endl;
+//}
+
+//7
+
+
+
+
+//8
+//int a[10];
+//int* pa = a;
+//for (int i = 0; i < 10; i++) {
+//	*pa = rand() % 20;
+//	cout << *pa << "  ";
+//	pa++;
+//}
+//cout << endl;
+//pa = a;
+//for (int i = 0; i < 10; i += 2) {
+//	for (int j = 2 + i; j < 10; j += 2) {
+//		if (*pa > * (pa + (j - i)))
+//			swap(*pa, *(pa + (j - i)));
+//	}
+//	pa += 2;
+//}
+//pa = a;
+//for (int i = 0; i < 10; i++) {
+//	cout << *pa << "  ";
+//	pa++;
+//}
