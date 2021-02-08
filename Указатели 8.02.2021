@@ -1,0 +1,1013 @@
+#include <iostream>
+#include <string>
+#include <Windows.h>
+#include <time.h>
+#include <conio.h>
+#define PI 3.14
+#include <stdio.h>
+#include <ctime>
+using namespace std;
+
+//double Sum(double x, double y) {
+//	double Sum = x + y;
+//		return Sum;
+//}
+
+//proc 16
+//int Sign(double X) {
+//	if (X < 0) return -1;
+//	else if (X == 0) return 0;
+//	else return 1;
+//}
+//int Sign(double a, double b) {
+//	double sum = a + b;
+//	return sum;
+//}
+//int main() {
+//	setlocale(0, "");
+//		SetConsoleCP(1251);
+//		SetConsoleOutputCP(1251);
+//		setlocale(LC_ALL, "Russian");
+//	
+//	cout << "Sum: " << Sign(5, 5) << endl;	
+//	cout << "X = " << Sign(-5) << endl;
+//}
+
+bool IsPrime(int num) {
+	for (int i = 2; i <= sqrt(num); i++) {
+		if (num % i == 0) return false;
+	}
+	return true;
+}
+//
+//int main() {
+//	int a, b;
+//	cin >> a >> b;
+//	if (IsPrime(a) || IsPrime(b)) {
+//		cout << a + b << endl;
+//	}
+//	cout << a - b << endl;
+//	cout << (IsPrime(a) || IsPrime(b) ? a + b : a - b) << endl;
+//}
+
+//int Factorial(int num) {
+//	int f = 1;
+//	for (int i = 1; i <= num; i++) {
+//		f *= i;
+//	}
+//	return f;
+//}
+
+//char Robot(char cur, int command) {
+//	switch (cur)
+//	{
+//	case 'n':
+//		if (command == 1) return 'w';
+//		else if (command == -1) return 'e';
+//		else return 's';
+//		break;
+//	case'e':
+//		if (command == 1) return 'n';
+//		else if (command == -1) return 's';
+//		else return 'w';
+//		break;
+//	case 's':
+//		if (command == 1) return 'e';
+//		else if (command == -1) return 'w';
+//		else return 'n';
+//		break;
+//	case 'w':
+//		if (command == 1) return 's';
+//		else if (command == -1) return 'n';
+//		else return 'e';
+//		break;
+//	default: break;
+//	}
+//	return '!';
+//}
+//
+//int main() {
+//	char direction;
+//	int command;
+//	cout << "Введите начальное направление: "; cin >> direction;
+//	cout << "1-left, -1-right, 2-left, 0-exit" << endl;
+//	while (true) {
+//		cout << "Command: "; cin >> command;
+//		if (command == 0) return 0;
+//		direction = Robot(direction, command);
+//		cout << "Новое  направление: " << Robot(direction, command) << endl;
+//	}
+//}
+
+//int main() {
+//	setlocale(0, "");
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//	setlocale(LC_ALL, "Russian");
+//
+//	/*double c = Sum(5, 6);
+//	cout << Sum(5, 6) << endl;*/
+//	///*double x;
+//	
+//	/*cout << Sign(2, 3) << Sign (5) << endl;*/
+//
+//
+//	/*cout << Factorial(6) << endl;*/
+//
+//
+//	
+//}
+
+//proc 18
+//
+//double CircleS(double R) {
+//	double S = 3.14 * pow(R, 2);
+//	return S;
+//return PI * r * r;
+//}
+//int main() {
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//	setlocale(LC_ALL, "Russian");
+//	double R;
+//	for (int i = 0; i < 3; i++) {
+//		cin >> R;
+//		cout << "Площадь круга: " << CircleS(R) << endl;
+//	}
+//	
+//}
+
+//double RIngS(double r1, double r2) {
+//	return CircleS(r1) - CircleS(r2);
+//}
+
+//proc24
+//bool Even(int k) {
+//	return k % 2 == 0;
+//}
+//
+//int main() {
+//	int num;
+//	int count = 0;
+//	for (int i = 0; i < 10; i++) {
+//		cin >> num;
+//		if (Even(num)) count++;
+//	}
+//	cout << "Even numbs count: " << count << endl;
+//}
+//
+//
+//int Quarter(double x, double y) {
+//	if (x > 0 && y > 0) return 1;
+//	else if (x < 0 && y>0) return 2;
+//	else if (x < 0 && y < 0) return 3;
+//	else return 4;
+//
+//	if (x * y > 0) return (x > 0 ? 1 : 3);
+//	else return (x > 0 ? 4 : 2);
+//
+//	return (x > 0 ? (y > 0 ? 1 : 4) : (y > 0 ? 2 : 3));
+// }
+//
+//int main() {
+//
+//}
+
+//void Transaction(int b,int sum = 1000) {
+//	cout << sum << endl;
+//}
+//int main () {
+// 	Transaction(6);
+//}
+
+//int MaxValue(int a, int b) {
+//	if (a > b) return a;
+//	else return b;
+//	//return (a > b ? a : b); тернарный оператор
+//}
+////для нахождения большего числа среди трёх
+//int MaxValue(int a, int b, int c) {
+//	/*if (a > b&& a > c) return a;
+//	else if (b > a&& b > c) return b;*/
+//	/*else return c;*/
+//	return (a > b ? a : b && a > c ? a : c && b > a ? b : a && b > c ? b : c);
+//}
+//
+//double MaxValue(double a, double b) {
+//	return (a > b ? a : b);
+//}
+//int main() {
+//	cout << MaxValue(4, 20, 21) << endl;
+//}
+
+//template <typename T>
+//void Show(T num) {
+//	cout << num << endl;
+//}
+//
+//int main() {
+//	int a, b; 
+//	cin >> a >> b;
+//	Show(a+b);
+//}
+
+//template <typename T1, typename T2>
+//void SumNums(T1 a, T2 b) {
+//	cout << (a + b);	
+//}
+//
+//int main() {
+//	SumNums(5, 10.15);
+//}
+
+//proc 24
+//bool Even(int k) {
+//	return k % 2 == 0;
+//}
+//
+//int main() {
+//	int k = 0, num;
+//	for (int i = 0; i < 10; i++) {
+//		cin >> num;
+//		if (Even(num)) k++;
+//	}
+//	cout << k;
+//}
+
+//proc 29
+//неправильно
+//int DigitCount(int k) {
+//	int i = 1;
+//	for (k >= 10; i++;) k /= 10;
+//	return i;
+//
+//}
+//
+//int main() {
+//	int k, counter = 0;
+//	for (int i = 0; i < 5; i++) {
+//		cin >> k;
+//		
+//
+//	}
+//	cout << DigitCount(k) << endl;
+//	return 0;
+//}
+
+//proc 34
+//
+//int Factorial(int num) {
+//	int f = 1;
+//	for (int i = 1; i <= num; i++) {
+//		f *= i;
+//		cout << f;
+//	}
+//	return f;
+//}
+//
+//int main() {
+//	int n;
+//	for (int i = 0; i < 5; i++) {
+//		cin >> n;
+//	}
+//	cout << Factorial(n) << endl;
+//}
+
+
+//bubble sort
+//int main() {
+//	/*int i, j, temp, pass = 0;
+//	int a[10] = { 10,2,0,14,43,25,18,1,5,45 };
+//	cout << "input list ...\n";
+//	for (i = 0; i < 10; i++) {
+//		cout << a[i] << "\t";
+//	}
+//	cout << endl;
+//	for (i = 0; i < 10; i++) {
+//		for (j = i + 1; j < 10; j++)
+//		{
+//			if (a[j] < a[i]) {
+//				temp = a[i];
+//				a[i] = a[j];
+//				a[j] = temp;
+//			}
+//		}
+//		pass++;
+//	}
+//	cout << "sorted element list ...\n";
+//	for (i = 0; i < 10; i++) {
+//		cout << a[i] << "\t";
+//	}
+//	cout << "\nnumber of passes taken to sort the list:" << pass << endl;
+//	return 0;*/
+//}
+
+
+const int n = 10;
+template <typename T>
+void PrintArray(T a[n]) {
+	for (int i = 0; i < n; i++)
+		cout << a[i] << " ";
+	cout << endl;
+}
+
+template <typename T>
+void InputArray(T& a) {
+	for (int i = 0; i < n; i++)
+		cin >> a[i];
+}
+template <typename T>
+void RandArray(T& a, int min = 1, int max = 50) {
+	for (int i = 0; i < n; i++)
+		a[i] = rand() % (max - min + 1) + min;
+	//PrintArray(a);
+}
+template <typename T1, typename T2>
+T2 MaxElementOfArray(T1 a, T2 max, int size = n) {
+	for (int i = 1; i < size; i++) {
+		if (a[i] > max) {
+			max = a[i];
+		}
+	}
+	return max;
+}
+template <typename T1, typename T2>
+T2 MinElementOfArray(T1 a, T2 min, int size = n) {
+	for (int i = 1; i < size; i++) {
+		if (a[i] < min) {
+			min = a[i];
+		}
+	}
+	return min;
+}
+template <typename T1, typename T2>
+T2 SumOfElements(T1 a, T2 sum = 0, int size = n) {
+	for (int i = 0; i < size; i++) {
+		sum += a[i];
+	}
+	return sum;
+}
+template <typename T1, typename T2>
+int LinearSearch(T1 a, T2 value) {
+	for (int i = 0; i < n; i++)
+		if (a[i] == value) return i;
+	return -1;
+}
+//без буфера со свапом
+template <typename T>
+void BubbleSort(T a) {
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = 0; j < n - 1 - i; j++) {
+			if (a[j] > a[j + 1]) swap(a[j], a[j + 1]);
+		}
+	}
+}
+//с буфером
+template <typename T>
+void BubbleSort1(T a) {
+	auto temp = a[0];
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = 0; j < n - 1 - i; j++) {
+			if (a[j] > a[j + 1]) {
+				temp = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = temp;
+			}
+		}
+	}
+}
+
+
+template <typename T>
+void SelectionSort(T a) {
+	auto temp = a[0];
+	auto max = a[0];
+	int max_index;
+	for (int i = 0; i < n - 1; i++) {
+		max = a[0];
+		max_index = 0;
+		for (int j = 0; j < n - i; j++) {
+			if (a[j] > max) {
+				max = a[j];
+				max_index = j;
+			}
+		}
+		temp = a[max_index];
+		a[max_index] = a[n - 1 - i];
+		a[n - 1 - i] = temp;
+	}
+}
+
+template <typename T>
+void InsertSort(T a) {
+	auto temp = a[0];
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = 1 + i; j < n; j++) {
+			if (a[i] > a[j]) {
+				temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+	}
+}
+
+template <typename T>
+void InsertSort1(T a, int size = n) {
+	auto temp = a[0];
+	for (int i = 0; i < size - 1; i++) {
+		for (int j = 1 + i; j < size; j++) {
+			if (a[i] > a[j]) {
+				temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+	}
+}
+
+template <typename T1, typename T2>
+int BinarySearch(T1 a, T2 value) {
+	int l = 0, r = n - 1;
+	int m;
+	while (abs(l - r) > 1) {
+		m = (l + r) / 2;
+		if (value == a[m]) return m;
+		else if (value > a[m]) l = m + 1;
+		else r = m - 1;
+		if (value == a[r]) return r;
+		if (value == a[l]) return l;
+	}
+	return -1;
+}
+
+
+
+template <typename T>
+void RandMatrix(T a, int size_m, int size_n, int min = 1, int max = 50) {
+	for (int i = 0; i < size_m; i++) {
+		for (int j = 0; j < size_n; j++) {
+			a[i][j] = rand() % (max - min + 1) + min;
+		}
+	}
+}
+
+template <typename T>
+void DisplayMatrix(T a, int size_m, int size_n) {
+	for (int i = 0; i < size_m; i++) {
+		for (int j = 0; j < size_n; j++) {
+			cout << a[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
+//array lenght
+//int main() {
+//	srand(time(NULL));
+//	int a[n];
+//	for (int i = 0; i < 5; i++)
+//		a[i] = 2 * i + 1;
+//	PrintArray(a);
+//}
+
+
+void Negative(int* a, int n) {
+	for (int i = 0; i < n; i++) {
+		if (a[i] % 4 == 0) a[i] = 999;
+	}
+}
+
+int* RemovePrimeNums(int* a, int* n) {
+	int prime_count = 0;
+	for (int i = 0; i < *n; i++) {
+		if (IsPrime(a[i])) prime_count++;
+	}
+	int* temp = new int[*n - prime_count];
+	int k = 0;
+	for (int i = 0; i < *n; i++) {
+		if (!IsPrime(a[i])) {
+			temp[k] = a[i];
+			k++;
+		}
+	}
+	delete[]a;
+	a = temp;
+	temp = nullptr;
+	*n -= prime_count;
+	return a;
+}
+
+
+
+int* AddPhone(int* pb, int& size) {
+	int* temp = new int[size + 1];
+
+	for (int i = 0; i < size; i++)
+		temp[i] = pb[i];
+	delete[]pb;
+
+	int input;
+	cout << "Entet new phone number: "; cin >> input;
+	temp[size] = input;
+	pb = temp;
+	temp = nullptr;
+	size++;
+	return pb;
+}
+void Display(int* pb, int size) {
+	for (int i = 0; i < size; i++) {
+		cout << i + 1 << ") " << pb[i] << endl;
+	}
+}
+int* RemovePhone(int* pb, int& size) {
+	int* temp = new int[size - 1];
+	int number;
+	cout << "Enter remove number: "; cin >> number;
+	int k = 0;
+	for (int i = 0; i < size; i++) {
+		if (pb[i] != number) {
+			temp[k] = pb[i];
+			k++;
+		}
+	}
+	delete[]pb;
+	pb = temp;
+	temp = nullptr;
+	size--;
+	return pb;
+}
+
+bool InPhoneBook(int* pb, int size) {
+	int number;
+	cout << "Enter searching number: "; cin >> number;
+	for (int i = 0; i < size; i++) {
+		if (pb[i] == number) return true;
+	}
+	return false;
+}
+
+int main() {
+	SetConsoleCP(1251);
+		SetConsoleOutputCP(1251);
+		setlocale(LC_ALL, "Russian");
+		srand(time(NULL));
+		/*cout << "Ввод массива целых чисел." << endl;
+		cout << "После ввода каждого числа нажмите <Enter>" << endl;
+		int a[5];
+		int non_zero_count = 0;
+		for (int i = 0; i < 5; i++) {
+			cout << "a[" << i + 1 << "]->";
+			cin >> a[i];
+			if (a[i] != 0) non_zero_count++;
+		}
+		cout << "В массиве ";
+		cout << non_zero_count << " ненулевых элемента." << endl;*/
+
+		/*cout << "Поиск минимального элемента массива." << endl;
+		cout << "Введите в одной строке элементы массива (5 целых чисел)" << endl;
+		cout << "и нажмите <Enter>" << endl;
+		int a[n];
+		RandArray(a);
+		cout << "-> ";
+		PrintArray(a);
+		cout << endl;
+		cout << "Минимальный элемент массива: " << MinElementOfArray(a, a[0]);*/
+
+		/*int a[n], non_zero = 0, sum = 0, arifm = 0;
+		cout << "Введите элементы массива (10 целых чисел) в одной строке инажмите <Enter>." << endl;
+		RandArray(a);
+		cout << "-> "; PrintArray(a);
+		for (int i = 0; i < n; i++) {
+			sum += a[i];
+			if (a[i] != 0) non_zero++;
+
+		}
+		cout << endl;
+		cout << "Сумма элементов массива: " << sum << endl;
+		cout << "Количество ненулевых элементов: " << non_zero << endl;
+		cout << "Среднее арифметическое ненулевых элементов: " << (double)sum / non_zero << endl;*/
+
+		/*int a[n], sum = 0, counter = n;
+		cout << "Среднее арифметическое без учета min и max значений." << endl;
+		cout << "Введите массив (10 целых чисел в одной строке)" << endl;
+		cout << "-> "; RandArray(a); PrintArray(a);
+		cout << endl;
+		cout << "Минимальный элемент: " << MinElementOfArray(a, a[0]) << endl;
+		cout << "Максимальный элемент: " << MaxElementOfArray(a, a[0]) << endl;
+		for (int i = 0; i < n; i++) {
+			sum += a[i];
+		}
+		cout << "Начальная сумма всех элементов: " << sum << endl;
+		if (MinElementOfArray(a, a[0])) counter--;
+		if (MaxElementOfArray(a, a[0])) counter--;
+		int summaxmin = MinElementOfArray(a, a[0]) + MaxElementOfArray(a, a[0]);
+		cout << "Сумма минимального и максимального значения: " << summaxmin << endl;
+		cout << "Количество элементов без max и min: " << counter << endl;
+
+		cout << "Сумма без мин и макс значения: " << sum - summaxmin << endl;
+		cout << "Среднее арифметическое без учета min и max значений: " << (double)sum / counter << endl;*/
+
+
+		/*int a[n];
+		cout << "-> "; RandArray(a);
+		int value;
+		cout << "Enter value: "; cin >> value;
+		bool isExist = LinearSearch(a, value) != -1;
+		cout << boolalpha << value << " in array: " << isExist << endl;*/
+
+		/*int a[n],
+		sum = 0;
+		RandArray(a, 1, 5);
+		sum = SumOfElements(a, 0);
+		cout << sum;*/
+
+
+
+
+		/*int a[n];
+		cout << "->"; RandArray(a);
+		int value;
+		cout << "Enter value: "; cin >> value;
+		bool is_exist = LinearSearch(a, value) != -1;
+		cout << boolalpha << value << " In array: " << is_exist << endl;*/
+
+
+
+
+		//int a[n];
+		//RandArray(a);
+		////самая простая сортировка
+		//for (int i = 0; i < n; i++)
+		//	for (int j = 0; j < n; j++)
+		//		if (a[i] < a[j])
+		//			swap(a[i], a[j]);
+		//PrintArray(a);
+
+
+		//int a[10] = { 1, 3, 5, 7, 9, 10, 15, 17, 18, 19 };
+		//PrintArray(a);
+		//int num;
+		//cout << "Enter num: "; cin >> num;
+		//cout << "Num index: " << BinarySearch(a, num) << endl;
+
+
+	//int a[5][4];//5 этажей по 4 кабинета
+	//RandMatrix(a, 5, 4);
+	//
+	////for (int i = 0; i < 5; i++) {
+	////	for (int j = 0; j < 4; j++) {
+	////		cin >> a[i][j];
+	////	}
+	////}
+	//
+	//cout << "Matrix: " << endl;
+	////for (int i = 0; i < 5; i++) {
+	////	for (int j = 0; j < 4; j++) {
+	////		cout << a[i][j] << "\t";
+	////	}
+	////	cout << endl;
+	////}
+	//DisplayMatrix(a, 5, 4);
+
+
+
+	//int a[5][4];
+	//RandMatrix(a, 5, 4);
+	//DisplayMatrix(a, 5, 4);
+	//int sum; 
+	//for (int i = 0; i < 5; i++) {
+	//	sum = 0;
+	//	for (int j = 0; j < 4; j++) {
+	//		sum += a[i][j];
+	//	}
+	//	cout << "Sum " << i +1<<" row " <<sum << endl;
+	//}
+
+
+
+	//int a[5][4];
+	//RandMatrix(a, 5, 4);
+	//DisplayMatrix(a, 5, 4);
+	//for (int i = 0; i < 5; i++) {
+	//	cout << MaxElementOfArray(a[i], a[i][0], 4) << endl;
+	//}
+
+
+	/*int a[5][4];
+	RandMatrix(a, 5, 4);
+	DisplayMatrix(a, 5, 4);
+	for (int i = 0; i < 5; i++) {
+
+		InsertSort1(a[i], 4);
+
+	}
+	cout << "Sorted: " << endl;
+	DisplayMatrix(a, 5, 4);*/
+
+
+
+
+	//int a = 5; 
+	//int* pa = &a;
+	//cout << pa << endl;
+	//cout << *pa << endl;
+
+
+	//указатели
+	//int a = 5, b = 2;
+	//Foo(&a, &b);
+	//cout << a << "\t" << b << endl;
+
+	//int a, b;
+	//cin >> a >> b;
+	//int* pa = &a;
+	//int* pb = &b;
+	//if (*pa > * pb) cout << "A is bigger" << *pa;
+	//else cout << "B is bigger" << endl;
+
+
+	//int a;
+	//cin >> a;
+	//int* pa = &a;
+	//if (*pa > 0) cout << "+" << endl;
+	//else cout << "-" << endl;
+
+
+	//int a = 5, b = 2, temp;
+	//int* pa = &a;
+	//int* pb = &b;
+	//for (int i = 0; i < 1; i++) {
+	//	temp = 0;
+	//	temp = *pb; 
+	//	cout <<"a = b: " <<temp << endl;
+	//	temp = *pa;
+	//	cout << "b = a: "<<temp << endl;
+	//}
+
+
+	//int a = 5, b = 3;
+	//char c;
+	//cin >> c;
+	//int* pa = &a;
+	//int* pb = &b;
+	//switch (c) {
+	//case '+': cout << *pa + *pb; break;
+	//case '-': cout << *pa - *pb; break;
+	//case '*': cout << *pa * *pb; break;
+	//case '/': cout << *pa / *pb; break;
+	//}
+
+
+	//int a[5] = {1, 5, 6, 9, 11};
+	//int* pa = a;
+	//int sum = 0;
+	//for (int i = 0; i < 5; i++) {
+	//	cout << *pa << "\t" << endl;
+	//	sum += *pa;
+	//	pa++;
+	//}
+	//cout << sum << endl;
+	//
+	//int a[n];
+	//int sum = 0;
+	//int* pa = a;
+	//for (int i = 0; i < n; i++) {
+	//	cin >> a[i];
+	//	sum += *pa;
+	//	pa++;
+	//}
+	//cout << sum;
+	//
+	//int a[n];
+	//int* pa = a;
+	//int sum = 0;
+	//RandArray(a);
+	//for (int i = 0; i < n; i++) {
+	//	sum += *pa;
+	//	pa++;
+	//}
+	//cout << sum;
+
+
+
+
+	//1
+	//int a = 5, b = 4;
+	//int* pa = &a;
+	//int* pb = &b;
+	//int c = *pa + *pb;
+	//cout << c << endl;
+	//cout << &c << endl;
+
+
+	//2
+	//int a = 2, b = 5;
+	//int* p1 = &a, * p2 = &b;
+	//*p1 = 10;
+	//cout << *p1 - *p2;
+
+	//3
+	//double a = 2.5, b = 5.2, res;
+	//double* p1 = &a, *p2 = &b;
+	//res = *p1 - *p2;
+	//cout << res;
+
+	//4
+	//const int SIZE = 10;
+	//int A[SIZE] = { 1,2,3,4,5,6,7,8,9,10 };
+	//int* p = A;
+	//for (int i = 0; i < SIZE; i++) {
+	//	cout << *p;
+	//	p++;
+	//}
+
+	//5
+	//int a[n];
+	//int* pa = a;
+	//RandArray(a);
+	//for (int i = 0; i < n; i++) {
+	//	cout << *pa << "\t";
+	//	pa++;
+	//}
+
+	//6 a[10]
+	//int a[n];
+	//int* pa = a;
+	//for (int i = 1; i < n; i++) {
+	//	cin >> a[i];
+	//	pa++;
+	//	if (*pa < 0 && *pa !=0) cout << "индекс " << i << " само число " << *pa << endl;
+	//}
+
+	//7
+
+
+
+
+	//8
+	//int a[10];
+	//int* pa = a;
+	//for (int i = 0; i < 10; i++) {
+	//	*pa = rand() % 20;
+	//	cout << *pa << "  ";
+	//	pa++;
+	//}
+	//cout << endl;
+	//pa = a;
+	//for (int i = 0; i < 10; i += 2) {
+	//	for (int j = 2 + i; j < 10; j += 2) {
+	//		if (*pa > * (pa + (j - i)))
+	//			swap(*pa, *(pa + (j - i)));
+	//	}
+	//	pa += 2;
+	//}
+	//pa = a;
+	//for (int i = 0; i < 10; i++) {
+	//	cout << *pa << "  ";
+	//	pa++;
+	//}
+
+
+
+
+
+//
+//int n;
+//cin >> n;
+//char* arr = new char[n];
+//
+//for (int i = 0; i < n; i++) {
+//	arr[i] = rand() % 26 + 65;
+//	cout << arr[i] << "  ";
+//}
+//cout << endl;
+//delete[]arr;
+//return 0;
+
+
+
+
+//21-22 с ворда
+//int n;
+//cin >> n;
+//int* nums = new int[n];
+//for (int i = 0; i < n; i++) {
+//	nums[i] = rand()% 31 - 10;
+//	cout << nums[i] << " ";
+//}
+//cout << endl;
+//Negative(nums, n);
+//for (int i = 0; i < n; i++) {
+//	cout << nums[i] << " ";
+//}
+//cout << endl;
+
+
+
+
+//23
+
+//int n;
+//cin >> n;
+//int* nums = new int[n];
+//for (int i = 0; i < n; i++) {
+//	nums[i] = i+1;
+//	cout << nums[i] << " ";
+//}
+//int add_n;
+//cin >> add_n;
+//int* temp = new int[n+add_n];
+//for (int i = 0; i < n; i++) {
+//	temp[i] = nums[i];
+//}
+//delete[]nums;
+//for (int i = n; i < n + add_n; i++) {
+//	temp[i] = i + 1;
+//}
+//nums = temp;
+//temp = nullptr;
+//
+//for (int i = 0; i < n + add_n; i++) {
+//	cout << nums[i] << "  ";
+//}
+//delete []nums;
+
+
+
+//23
+
+//int n;
+//cin >> n;
+//int* nums = new int[n];
+//for (int i = 0; i < n; i++) {
+//	nums[i] = i + 1;
+//	cout << nums[i] << " ";
+//}
+//int remove_n;
+//cin >> remove_n;
+//int* temp = new int[n - remove_n];
+//for (int i = 0; i < n-remove_n; i++) {
+//	temp[i] = nums[i];
+//}
+//delete[]nums;
+//nums = temp;
+//temp = nullptr;
+//
+//for (int i = 0; i < n - remove_n; i++) {
+//	cout << nums[i] << "  ";
+//}
+
+
+
+
+//23
+//int n;
+//cout << "Enter n = "; cin >> n;
+//int* nums = new int[n];
+//for (int i = 0; i < n; i++) {
+//	nums[i] = rand() % 30 + 1;
+//	cout << nums[i] << "  ";
+//}
+//cout << endl;
+//nums = RemovePrimeNums(nums, &n);
+//for (int i = 0; i < n; i++) {
+//	cout << nums[i] << "  ";
+//}
+//
+
+
+
+//телефонный справочник
+int size = 0;
+int* pb = new int[size];
+int op;
+Menu:
+Display(pb, size);
+cout << "1-add, 2-search number, 3-remove,0-exit" << endl;
+cout << "Your operation: "; cin >> op;
+switch (op) {
+case 1:
+	pb = AddPhone(pb, size);
+	break;
+case 2:
+	if (InPhoneBook(pb, size)) cout << "Yes" << endl;
+	else cout << "No" << endl;
+	break;
+case 3:
+	pb = RemovePhone(pb, size);
+	break;
+case 0:
+	return 0;
+	break;
+default:break;
+}
+
+goto Menu;
+
+
+
+}
+
+
+
+
