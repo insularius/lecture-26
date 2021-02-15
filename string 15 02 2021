@@ -1,0 +1,110 @@
+string substring(string s, int pos1, int pos2) {
+	return s.substr(pos1, pos2-pos1+1);
+}
+
+
+
+void city(string s) {
+	int n = 1;
+	for (int i = 0; i < s.length(); i++) {
+		if (s[i] == ',') n++;
+	}
+	string* cities = new string[n];
+	for (int i = 0; i < n; i++) {
+		cities[i] = s.substr(0, s.find(','));
+		s = s.substr(s.find(',') + 1);
+		cout << cities[i] << " ";
+	}
+
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = 1 + i; j < n; j++) {
+			if (cities[i] > cities[j])
+				swap(cities[i], cities[j]);
+		}
+	}
+	cout << endl;
+	cout << "Sorted" << endl;
+	for (int i = 0; i < n; i++) {
+		cout << cities[i] << " ";
+	}
+}
+
+
+bool CheckEmail(string s) {
+	string name = s.substr(0, s.find('@'));
+	string site = substring(s, s.find('@') + 1, s.find_last_of('.') - 1);
+	string domain = s.substr(s.find_last_of('.') + 1);
+	int dot_count = 0;
+	for (int i = 0; i < name.length(); i++) {
+		if (name[i] != '.' && !isalpha(name[i])) return false;
+		if (name[i] == '.') {
+			if (dot_count > 0 || i == 0 || i == name.length() - 1) return false;
+		}
+	}
+	if (site.empty()) return false;
+	for (int i = 0; i < site.length(); i++) {
+		if (!isalpha(site[i]) && !isdigit(site[i])) return false;
+	}
+	if (domain.length() < 2) return false;
+	for (int i = 0; i < domain.length(); i++) {
+		if (!isalpha(domain[i])) return false;
+	}
+	return true;
+}
+
+
+
+
+
+
+
+
+
+
+//string s = "Hello, world";
+	///*int pos = s.find("w");*/
+	//int pos = s.find_last_of("w");
+	//s = s.substr(pos, 5);
+	//cout << s << endl;
+
+	/*string s = "youtube.com";
+	int dot_pos = s.find('.');
+	int length = s.length();
+	string site_name = s.substr(0, dot_pos);
+	string domain = s.substr(dot_pos + 1, length - dot_pos);
+	cout << domain << endl;*/
+
+
+
+	/*string fio = "Sekenov Sultanbek Nurlanovich";
+	string name[3];
+	for (int i = 0; i < 3; i++) {
+		name[i] = fio.substr(0, fio.find(' '));
+		fio = fio.substr(fio.find(' ')+1);
+		cout << name[i] << " ";
+	}*/
+
+
+	/*string s = "How are you";
+	int pos1 = s.find(' ') + 1;
+	int pos2 = s.find_last_of(' ') - 1;
+	cout << substring(s, pos1,pos2);*/
+	
+//
+//string s = "Almaty,Astana,Semey,Pavlodar,Taldyk,Lol,ge,dsf";
+//city(s);
+
+
+//string s = "87750293290";
+//string f = "+7";
+//s.replace(0, 1, 1, '+');
+//cout << s << endl;
+
+string s = "sultan.sekenov@yandex.ru";
+string s1 = "sul12tan.seke312nov@yandex.ru";
+string s2 = "sultan.seke133nov@yan2!@dex.ru";
+string s3 = "sultan.sekenov@yande##@!xru";
+cout << CheckEmail(s) << endl;
+cout << CheckEmail(s1) << endl;
+cout << CheckEmail(s2) << endl;
+cout << CheckEmail(s3) << endl;
