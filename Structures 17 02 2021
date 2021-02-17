@@ -1,0 +1,184 @@
+//struct Student {
+//	int id;
+//	string sname;
+//	int exam_count;
+//	int average_point;
+//};
+//
+//int main() {
+//
+//	Student john;
+//	john.id = 1;
+//	john.sname = "Curry";
+//	john.exam_count = 5;
+//	john.average_point = 4.2;
+//
+//	cout << john.sname << endl;
+//}
+struct Drob {
+	int chislitel;
+	int znam;
+};
+void Display(Drob d) {
+	cout << d.chislitel << "/" << d.znam << endl;
+}
+void Reduce(Drob& d) {
+	int n = (d.chislitel < d.znam ? d.chislitel : d.znam);
+	for (int i = n; i >= 2; i--) {
+		if (d.znam % i == 0 && d.chislitel % i == 0) {
+			d.znam /= i;
+			d.chislitel /= i;
+		}
+	}
+}
+
+Drob DrobSum(Drob x, Drob y) {
+	Drob r;
+	r.znam = x.znam * y.znam;
+	r.chislitel = x.chislitel * y.znam + y.chislitel * x.znam;
+	Reduce(r);
+	return r;
+}
+Drob operator+(Drob x, Drob y) {
+	Drob r;
+	r.znam = x.znam * y.znam;
+	r.chislitel = x.chislitel * y.znam + y.chislitel * x.znam;
+	Reduce(r);
+	return r;
+}
+Drob operator- (Drob x, Drob y) {
+	Drob r;
+	r.znam = x.znam * y.znam;
+	r.chislitel = x.chislitel * y.znam - y.chislitel * x.znam;
+	Reduce(r);
+	return r;
+}
+Drob operator* (Drob x, Drob y) {
+	Drob r;
+	r.znam = x.znam * y.znam;
+	r.chislitel = x.chislitel *  y.chislitel;
+	Reduce(r);
+	return r;
+}
+Drob operator/(Drob x, Drob y) {
+	Drob r;
+	r.znam = x.znam * y.chislitel;
+	r.chislitel = x.chislitel * y.znam;
+	Reduce(r);
+	return r;
+}
+
+//struct User {
+//	string name;
+//	string phone;
+//	string email;
+//	string birth_date;
+//};
+//void Display(User u) {
+//	cout << u.name << " " << u.phone << " " << u.email << " "<< u.birth_date << endl;
+//}
+
+//int main()
+//{
+//	/*User users[3];
+//	for (int i = 0; i < 3; i++) {
+//		cout << "User" << i + 1 << endl;
+//		cout << "Name "; getline(cin, users[i].name);
+//		cout << "Phone "; getline(cin, users[i].phone);
+//		cout << "Email "; getline(cin, users[i].email);
+//		cout << "Birthday "; getline(cin, users[i].birth_date);
+//		Display(users[i]);
+//	}*/
+//	
+//	/*Drob a, b, r;
+//	cout << "A-> "; cin >> a.chislitel >> a.znam;
+//	cout << "B-> "; cin >> b.chislitel >> b.znam;
+//	r = a / b;
+//	Display(a+b);*/
+//}
+
+//struct User
+//{
+//	string login;
+//	string password;
+//};
+//
+//User InputForm() {
+//	User g;
+//	cout << "Enter login and password: " << endl;
+//	cout << "->"; cin >> g.login;
+//	cout << "->"; cin >> g.password;
+//	return g;
+//}
+//int CheckUser(User g, string db[5][2], int n) {
+//	for (int i = 0; i < n; i++) {
+//		if (db[i][0] == g.login && db[i][1] == g.password)
+//			return 1;
+//		else if (db[i][0] == g.login) {
+//			return 2;
+//		}
+//	}
+//	return 0;
+//}
+//void Register(User g) {
+//	cout << "Registration" << endl;
+//	string pwd, pwd_confirm;
+//	cout << "Login "; cin >> g.login;
+//	PwdAgain:
+//	cout << "Password "; cin >> pwd;
+//	cout << "Confirm password "; cin >> pwd_confirm;
+//	if (pwd == pwd_confirm) g.password = pwd; 
+//	
+//	else {
+//		cout << "Password doesn't match" << endl;
+//		goto PwdAgain;
+//	}
+//}
+
+//int main() {
+//	string database[5][2] = {
+//		{"john", "john123"},
+//		{"alex", "alex123"},
+//		{"mark", "mark123"},
+//		{"tom", "tom123"},
+//		{"brad", "brad123"}
+//	};
+//	User guest = InputForm();
+//	char reg;
+//	int check_r = CheckUser(guest, database, 5);
+//	if (check_r ==1) {
+//		cout << "Welcome!";
+//	}
+//	else if (check_r == 2) {
+//		cout << "Incorrect password" << endl;
+//	}
+//	else {
+//		cout << "User not found";
+//		cout << "Proceed register" << endl;
+//		cout << "-> (y-yes, n-no)"; cin >> reg;
+//		if (reg =='y') Register(guest);
+//	}
+//}
+
+struct Book {
+	int id;
+	string name;
+	string author;
+	int page_count;
+};
+Book CreateBook() {
+	Book a;
+	cout << "Enter book id: "; cin >> a.id;
+	cout << "Enter book name: "; cin >> a.name;
+	cout << "Enter book author: "; cin >> a.author;
+	cout << "Enter amout of book pages: "; cin >> a.page_count;
+	return a;
+}
+void BookDisplay(Book a) {
+	cout << "Book id: " << a.id << "\nBook name: " << a.name << "\nBook author: " << 
+		a.author << "\nAmount of pages: " << a.page_count << endl;
+}
+int main() {
+	Book a = CreateBook();
+	BookDisplay(a);
+}
