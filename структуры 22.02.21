@@ -1,0 +1,173 @@
+
+//string bag;
+//string cities[10] = { "Almaty","Paris","Semey","Nur-Sultan","Aktobe",
+//				   "Novosib","Kiev","Rome","Athens","London" };
+//struct Ticket {
+//	string route;
+//	string date;
+//	string time;
+//	double cost;
+//};
+//Ticket RandomTicket() {
+//	Ticket t;
+//Route:
+//	string from = cities[rand() % 10], to = cities[rand() % 10];
+//	if (from == to) goto Route;
+//	t.route = from + " - " + to;
+//	int day = rand() % 28 + 1, month = rand() % 12 + 1;
+//	t.date = (day < 10 ? "0" : "") + to_string(day)
+//		+ "." +
+//		(month < 10 ? "0" : "") + to_string(month)
+//		+ ".21";
+//	int hour = rand() % 24, min = rand() % 60;
+//	t.time = (hour < 10 ? "0" : "") + to_string(hour)
+//		+ ":" +
+//		(min < 10 ? "0" : "") + to_string(min);
+//	t.cost = (rand() % 51 + 20) * 1000;
+//	return t;
+//}
+//Ticket InputTicket() {
+//	Ticket t;
+//	cout << "Enter ticket info:" << endl;
+//	cout << "Route: "; getline(cin, t.route);
+//	cout << "Date: "; getline(cin, t.date);
+//	cout << "Time: "; getline(cin, t.time);
+//	cout << "Cost: "; cin >> t.cost;
+//	getline(cin, bag);
+//	return t;
+//}
+//void Display(Ticket t) {
+//	t.route.resize(23, ' ');
+//	cout << t.route << "\t"
+//		<< t.date << "\t"
+//		<< t.time << "\t"
+//		<< t.cost << endl;
+//}
+//void DisplayList(Ticket* ts, int n) {
+//	for (int i = 0; i < n; i++)
+//		Display(ts[i]);
+//}
+//Ticket* AddTicket(Ticket* ts, int& n) {
+//	Ticket* temp = new Ticket[n + 1];
+//	for (int i = 0; i < n; i++) temp[i] = ts[i];
+//	delete[]ts;
+//	temp[n] = RandomTicket();
+//	n++;
+//	return temp;
+//}
+//void DisplayInDate(Ticket* ts, int n) {
+//	string date;
+//	cout << "Enter Date: "; cin >> date;
+//	for (int i = 0; i < n; i++) {
+//		if (ts[i].date == date) Display(ts[i]);
+//	}
+//}
+//void DisplayInCost(Ticket* ts, int n) {
+//	double money;
+//	cout << "Enter money: "; cin >> money;
+//	for (int i = 0; i < n; i++) {
+//		if (ts[i].cost <= money) Display(ts[i]);
+//	}
+//}
+//int main()
+//{
+//	int n = 15;
+//	Ticket* tks = new Ticket[n];
+//	for (int i = 0; i < n; i++) tks[i] = RandomTicket();
+//	DisplayList(tks, n);
+//	DisplayInCost(tks, n);
+//	DisplayInDate(tks, n);
+//}
+
+//struct Date {
+//	int day;
+//	int month;
+//	int year;
+//};
+//struct Student {
+//	string second_name;
+//	string group;
+//	Date admission_Date;
+//};
+//void DisplayDate(Date d) {
+//	cout << d.day << "." << d.month << "." << d.year << endl;
+//}
+//void DisplayStudent(Student s) {
+//	cout << s.second_name << endl;
+//	cout << s.group << endl;
+//	DisplayDate(s.admission_Date);
+//}
+//Date SetDate(string date = "23.12.21") {
+//	Date d;
+//	d.day = stoi(date.substr(0, 2));
+//	d.month = stoi(date.substr(3, 2));
+//	d.year = stoi(date.substr(6, 2));
+//	return d;
+//}
+//int main() 
+//{
+//	Student john;
+//	john.second_name = "Smith";
+//	john.group = "SMP-2021.1";
+//	john.admission_Date = SetDate();
+//	DisplayStudent(john);
+//}
+
+
+
+
+struct OZU {
+	string firm;
+	string ghz;
+	string capacity;
+};
+OZU InputRam() {
+	OZU a;
+	cout << "Enter firm: "; getline(cin, a.firm);
+	cout << "Enter GHz: "; getline(cin, a.ghz);
+	cout << "Enter capacity: "; getline(cin, a.capacity);
+	return a;
+}
+void Display(OZU a) {
+	cout << "Firm: " << a.firm << "\t" << "Ghz: " << a.ghz << "\t"
+		<< "Capacity: " << a.capacity << endl;
+}
+void DisplayList(OZU* pa, int n) {
+	for (int i = 0; i < n; i++) {
+		Display(pa[i]);
+	}
+}
+OZU* AddRam(OZU* pa, int& n) {
+	OZU* temp = new OZU[n + 1];
+	for (int i = 0; i < n; i++) {
+		temp[i] = pa[i];
+	}
+	delete[]pa;
+	temp[n] = InputRam();
+	n++;
+	return temp;
+}
+void DisplayMoreFrequency(OZU* pa, int n) {
+	string ghz;
+	cout << "Enter ghz: "; cin >> ghz;
+	for (int i = 0; i < n; i++) {
+		if (pa[i].ghz < ghz) Display(pa[i]);
+	}
+}
+void DisplayMoreMemmory(OZU * pa, int n) {
+	string ozu;
+	cout << "Enter ozu: "; cin >> ozu;
+	for (int i = 0; i < n; i++) {
+		if (pa[i].capacity < ozu) Display(pa[i]);
+	}
+}
+int main() {
+	int n = 1;
+	OZU* pa = new OZU[n];
+	for (int i = 0; i < n; i++) {
+		pa[i] = InputRam();
+	}
+	DisplayList(pa, n);
+	pa=AddRam(pa, n);
+	DisplayList(pa, n);
+}
