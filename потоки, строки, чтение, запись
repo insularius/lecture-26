@@ -1,0 +1,83 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+string filename = "Текст.txt";
+
+//void Write() {
+//    string city;
+//    cout << "Enter new City: "; cin >> city;
+//    ofstream f(filename, ios::app);
+//    f << city << ",";
+//    f.close();
+//}
+//void Print(string* s, int n) {
+//    for (int i = 0; i < n; i++)
+//        cout << s[i] << endl;
+//}
+//int CityCountInFile() {
+//    string s;
+//    ifstream file(filename);
+//    getline(file, s);
+//    file.close();
+//    int k = 0;
+//    for (int i = 0; i < s.length(); i++) {
+//        if (s[i] == ',')
+//            k++;
+//    }
+//    return k;
+//}
+//string* Read(string* s, int n) {
+//    ifstream file (filename);
+//    for (int i = 0; i < n; i++) {
+//        getline(file, s[i], ',');
+//    }
+//    file.close();
+//    return s;
+//}
+//
+//
+//int main()
+//{
+//    int n = CityCountInFile();
+//    string* cities = new string[n];
+//    cities = Read(cities, n);
+//    Print(cities, n);
+//    delete[]cities;
+//}
+
+
+struct Student {
+	int id;
+	string name;
+	string group;
+	int age;
+};
+void Print(Student s) {
+	cout << s.id << ") " << s.name << "\t"
+		<< s.group << "\t"
+		<< s.age << endl;
+	}
+int main() 
+{
+	Student john;
+	string s;
+	ifstream file(filename);
+	getline(file, s, ',');
+	john.id = stoi(s);
+	getline(file, john.name, ',');
+	getline(file, john.group, ',');
+	getline(file, s);
+	john.age = stoi(s);
+	file.close();
+	Print(john);
+}
+
+
+//домашка по строкам, путям подсказка
+//string path[5];
+//getline(file, path[0]);
+//string music[5];
+//1 - получить артиста и название песни
+//2 - заменить все "_" на " "
+//3 первые буквы артиста и трека с большой буквы
