@@ -1,0 +1,186 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <Windows.h>
+using namespace std;
+string filename = "students.csv";
+string bag;
+int CountInFile(string filename) {
+	int count = 0;
+	char c;
+	ifstream file(filename);
+	while (!file.eof()) {
+		file.get(c);
+		if (c == '\n') count++;
+	}
+	file.close();
+	return --count;
+}
+int PropCount(string filename) {
+	string s;
+	int count = 0;
+	ifstream file(filename);
+		getline(file, s);
+		for (int i = 0; i < s.length(); i++) {
+			if (s[i] == ';')count++;
+		}
+		return ++count;
+}
+
+struct Student {
+	int id;
+	string sname;
+	string name;
+	string fname;
+	string faculty;
+	int grade;
+	int birth_year;
+	string city;
+};
+
+Student* RFF(int n) {
+	Student* temp = new Student[n];
+	int prop_count = PropCount(filename);
+	string* s=new string[prop_count];
+	ifstream file(filename);
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < prop_count - 1; j++)
+			getline(file, s[j], ';');
+		getline(file, s[prop_count - 1]);
+		//manual
+		temp[i] = { stoi(s[0]), s[1], s[2], s[3], s[4], stoi(s[5]), stoi(s[6]), s[7] };
+	}
+
+	file.close();
+	return temp;
+}
+void Print(Student s) {
+	cout << s.id << ") " << (s.sname + " " + s.name + " " + s.fname) << "\t"
+		<< s.faculty << "\t" << s.grade << "\t" 
+		<< s.birth_year << "\t" << s.city << endl;
+}
+void Print(Student* s, int n) {
+	for (int i = 0; i < n; i++) {
+		Print(s[i]);
+	}
+}
+int main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	int n = CountInFile(filename);
+	Student* students = RFF(n);
+	Print(students, n);
+}
+
+
+
+
+
+
+//string bag;
+//int CountInFile(string filename) {
+//	int count = 0;
+//	char c;
+//	ifstream file(filename);
+//	while (!file.eof()) {
+//		file.get(c);
+//		if (c == '\n') count++;
+//	}
+//	file.close();
+//	return --count;
+//}
+//struct Book {
+//	string author;
+//	string title;
+//	int year;
+//	int cost;
+//};
+//void Print(Book b) {
+//	cout << b.author << " - \"" << b.title << "\"" << endl;
+//	cout << b.year << "\t" << b.cost << " tg" << endl;
+//}
+//void Print(Book* books, int n) {
+//	for (int i = 0; i < n; i++) Print(books[i]);
+//}
+//void RFF(string filename, Book*& books, int& n) {
+//	n = CountInFile(filename);
+//	books = new Book[n];
+//	string s;
+//	ifstream file(filename);
+//	for (int i = 0; i < n; i++) {
+//		getline(file, books[i].author, ',');
+//		getline(file, books[i].title, ',');
+//		getline(file, s, ',');
+//		books[i].year = stoi(s);
+//		getline(file, s);
+//		books[i].cost = stoi(s);
+//	}
+//	file.close();
+//}
+//Book Create() {
+//	Book b;
+//	cout << "Enter book info: " << endl;
+//	cout << "Author: "; getline(cin, b.author);
+//	cout << "Title: "; getline(cin, b.title);
+//	cout << "Year: "; cin >> b.year;
+//	cout << "Cost: "; cin >> b.cost;
+//	getline(cin, bag);
+//	return b;
+//}
+//void Update(Book* books, int n, string filename) {
+//	ofstream file(filename);
+//	for (int i = 0; i < n; i++) {
+//		file << books[i].author << ","
+//			<< books[i].title << ","
+//			<< books[i].year << ","
+//			<< books[i].cost << endl;
+//	}
+//	file.close();
+//}
+//void Add(Book*& books, int& n, string filename) {
+//	Book* temp = new Book[n + 1];
+//	for (int i = 0; i < n; i++) temp[i] = books[i];
+//	delete[]books;
+//	temp[n] = Create();
+//	books = temp;
+//	temp = nullptr;
+//	n++;
+//	Update(books, n, filename);
+//}
+//int main()
+//{
+//	int n;
+//	Book* books;
+//	RFF("file.txt", books, n);
+//	Print(books, n);
+//	Add(books, n, "file.txt");
+//}
+
+//int main() {
+//	Book books[2];
+//	string s;
+//	ifstream file("file.txt");
+//	for (int i = 0; i < 2; i++) {
+//		getline(file, books[i].author, ',');
+//		getline(file, books[i].title, ',');
+//		getline(file, s, ',');
+//		books[i].year = stoi(s);
+//		getline(file, s);
+//		books[i].cost = stoi(s);
+//	}
+//	file.close();
+//	Print(books[0]);
+//	Print(books[1]);
+//}
+
+
+//int main()
+//{
+//	string str; 
+//	ifstream file("file.txt");
+//	getline(file, str);
+//	file.close();
+//	cout << str << endl;
+//	int n = CountInFile("file.txt");
+//	cout << n << endl;
+//}
