@@ -1,0 +1,174 @@
+users.h
+
+#pragma once
+#include "functions.h"
+
+struct User {
+	string login;
+	string pwd;
+};
+void Print(User a) {
+	cout << a.login << "\t"
+		<< a.pwd << endl;
+}
+User Input() {
+	User a;
+	cout << "Enter user info: " << endl;
+	getline(cin, a.login);
+	getline(cin, a.pwd);
+	return a;
+}
+
+
+
+
+
+
+users.csv
+alexa1111;123;alexa;smith;evgenovna;27
+admin;admin123;admin;admin;admin;1970
+lok;123;loks;loks;loks;35
+
+
+
+
+
+human.h
+
+
+#pragma once
+#include "users.h"
+string bag;
+struct Human {
+	string name;
+	string sname;
+	string fname;
+	int age;
+	User login_info;
+};
+
+void Write(Human a) {
+	ofstream file("users.csv", ios::app);
+	file << a.login_info.login << ";"
+		<< a.login_info.pwd << ";"
+		<< (a.name + ";" + a.sname + ";" + a.fname)
+		<< a.age << endl;
+	file.close();
+}
+void Display(Human a) {
+	cout << (a.name + " " + a.sname + " " + a.fname) << endl;
+	cout << a.age << endl;
+	Print(a.login_info);
+}
+Human InputHuman() {
+	Human a;
+	getline(cin, a.name);
+	getline(cin, a.sname);
+	getline(cin, a.fname);
+	cin >> a.age; 
+	getline(cin, bag);
+	a.login_info = Input();
+	Write(a);
+	cout << "Thanks for joining us!"<< endl; 	
+	return a;
+}
+
+void Login(bool& auth, Human& me) {
+	string login, pwd;
+TryAgain:
+	cout << "Login: "; cin >> login;
+	cout << "Password: "; cin >> pwd;
+	ifstream file("users.csv");
+	string s;
+	for (int i = 0; i < CountInFile("users.csv"); i++) {
+		getline(file, me.login_info.login, ';');
+		getline(file, me.login_info.pwd, ';');
+		getline(file, me.name, ';');
+		getline(file, me.sname, ';');
+		getline(file, me.fname, ';');
+		getline(file, s);
+		me.age = stoi(s);
+		if (me.login_info.login == login) {
+			if (me.login_info.pwd == pwd) {
+				cout << "Welcome!" << endl;
+				auth = true;
+				file.close();
+				return;
+			}
+			else {
+				cout << "Incorrect pwd" << endl;
+				file.close();
+				goto TryAgain;
+			}
+		}
+	}
+	cout << "User not found!" << endl;
+	file.close();
+	goto TryAgain;
+}
+
+
+
+
+
+
+functions.h
+
+
+#pragma once
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cmath>
+#include <Windows.h>
+#include <locale>
+#include <fstream>
+#define PI 3.14
+#define EXP 2.7
+#define BIRTH_YEAR 1995
+using namespace std;
+
+int CountInFile(string filename) {
+	int count = 0;
+	char c;
+	ifstream file(filename);
+	while (!file.eof()) {
+		file.get(c);
+		if (c == '\n') count++;
+	}
+	file.close();
+	return --count;
+}
+
+
+
+
+препроцессы
+
+
+
+#include "human.h"
+
+int main()
+{
+	/*Human john = InputHuman();
+	Display(john);*/
+	int op;
+	Human me;
+	bool authorized = false;
+Menu: 
+	if (!authorized) {
+		cout << "1-login, 2-register" << endl;
+		cout << "->"; cin >> op; getline(cin, bag);
+		if (op == 1) Login(authorized, me);
+		else if (op == 2) me = InputHuman();
+	}
+	else {
+		if (me.login_info.login == "admin") {
+			cout << "1-add user, 2-edit user, 3-remove user" << endl;
+			//добавить функции добавления юзера, редактирования юзера, удаления юзера
+			//написать rff (read from file) с хумана юзера
+			Human* users = new Human[CountInFile("users.csv")];
+		}
+	}
+}
