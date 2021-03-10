@@ -1,0 +1,34 @@
+void Read(string*& ps, int n) {
+    ifstream file("text.txt");
+    for (int i = 0; i < n; i++) {
+        getline(file, ps[i]);
+    }
+        
+    file.close();
+}
+
+string CorrectMusic(string s) {
+    while (s.find('_') != -1) s.replace(s.find('_'), 1, " ");
+    string artist, track;
+    artist = s.substr(0, s.find('-'));
+    track = s.substr(s.find('-') + 1, s.find('.') - s.find('-') - 1);
+    artist[0] = toupper(artist[0]);
+    track[0] = toupper(track[0]);
+    return (artist + " - " + track);
+}
+
+int main()
+{
+    int n = 5;
+    string* paths = new string[n];
+    Read(paths, n);
+    
+    for (int i = 0; i < n; i++) {
+        paths[i] = CorrectMusic(paths[i].substr(paths[i].rfind("/") + 1));
+    }
+    cout << paths[0] << endl;
+    cout << paths[1] << endl;
+   
+    
+    
+}
