@@ -1,0 +1,201 @@
+#include <iostream>
+#include <fstream>
+#include <math.h>
+#include <Windows.h>
+#include <ctime>
+#include <string>
+#define BOOK_FILE "books.csv"
+#define PI 3.14;
+#define PRINT(x) cout <<(#x) << " = " << x << endl;
+#define INPUT(x) cout << "Enter " << (#x) << ": "
+#define IS_EVEN(x) (x%2==0)
+#define MINX(x, y) (x<y?x:y)
+#define QUAD(x) (x*x)
+#define STEPEN(x, y) (x*y)
+#include "function.h"
+using namespace std;
+#define DEF1
+#define VERSION1
+#define INTEGER  10
+#define show ShowInt
+int const n = 5;
+void Show(int*& a, int n) {
+	int c;
+Choose:
+	cout << endl;
+	cout << "Choose function: 1-rand arr, 2-min element of arr, 3-max element of arr, 4-arr sort, 5-print arr " << endl;
+	cin >> c;
+	switch (c) {
+	case 1:
+		RandArray(a, n);
+		break;
+	case 2:
+		Min(a, n);
+		break;
+	case 3:
+		Max(a, n);
+		break;
+	case 4:
+		ArrSort(a, n);
+		break;
+	case 5:
+		PrintArray(a, n);
+		break;
+	}
+	goto Choose;
+}
+
+	int main() {
+
+	
+	int* a = new int[n];
+	Show(a, n);
+}
+
+
+//show menu, чтобы вызывать определённые функции
+
+//int main() {
+//	
+//#ifdef DEF1
+//	cout << "workd" << endl;
+//#endif
+//
+//
+//
+//}
+
+//#ifdef VERSION1
+//
+//
+//int main()
+//{
+//	cout << "Hello 1" << endl;
+//}
+//#else
+//
+//int main() {
+//	cout << "Hello 2" << endl;
+//}
+//#endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//int main()
+//{
+//    /*int width;
+//    int age;
+//    INPUT(width); cin >> age;
+//    INPUT(age); cin >> age;*/
+//  /*  int a; 
+//    INPUT(a); cin >> a;
+//    cout << boolalpha << "Is even? " << IS_EVEN(a) << endl;*/
+//    //int number_1, number_2;
+//    //INPUT(number_1); cin >> number_1;
+//    //INPUT(number_2); cin >> number_2;
+//    //cout << "Min: " << MINX(number_1, number_2) << endl;
+//    ////int b; 
+//    ////INPUT(b); cin >> b;
+//    ////cout << "Quad: " << QUAD(b) << endl;
+//    /////*int a;
+//    ////INPUT(a); cin >> a;
+//    ////CHET(a);*/
+//   /* int a; 
+//    int b;
+//    INPUT(a); cin >> a;
+//    INPUT(b); cin >> b;
+//    cout << "Stepen: " << STEPEN(a, b);*/
+//
+//
+//
+//
+//}
+
+
+
+
+function.h
+#pragma once
+#include <string>
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+double Sum(double a, double b);
+void RandArray(int*& a, int n);
+void PrintArray(int*& a, int n);
+void Min(int*& a, int n);
+void Max(int*& a, int n);
+void ArrSort(int*& a, int n);
+void EditArr(int*& a, int n, int index);
+
+
+
+function.cpp
+#include "function.h"
+
+void RandArray(int*& a, int n)
+{
+	for (int i = 0; i < n; i++) {
+		a[i] = rand();
+	}
+}
+
+void PrintArray(int*& a, int n)
+{
+	for (int i = 0; i < n; i++) {
+		cout << a[i] << " ";
+	
+	}
+}
+
+void Min(int*& a, int n)
+{
+	int min = a[0];
+	for (int i = 1; i < n; i++) {
+		if (a[i] < min) min = a[i];
+	}
+	cout << min;
+}
+
+void Max(int*& a, int n)
+{
+	int max = a[0];
+	for (int i = 0; i < n; i++) {
+		if (a[i] > max) max = a[i];
+	}
+	cout << max;
+}
+
+void ArrSort(int*& a, int n)
+{
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (a[i] < a[j]) 
+			swap(a[i], a[j]);
+			
+		}			
+	}
+	
+}
+
+void EditArr(int*& a, int n, int index)
+{
+	for (int i = 0; i < n; i++) {
+		cin >> a[index];
+	}
+}
+
+
+
