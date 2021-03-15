@@ -1,0 +1,144 @@
+#pragma once
+#include "details.h"
+struct Product {
+	string name;
+	int cost;
+	int d_count;
+	Detail* details;
+};
+
+int CountInFile(string filename) {
+	int count = 0;
+	char c;
+	ifstream file(filename);
+	while (!file.eof()) {
+		file.get(c);
+		if (c == '\n') count++;
+	}
+	file.close();
+	return --count;
+}
+
+void Write(Product a) {
+	WCOPEN("products.csv");
+	file << a.name << ";"
+		<< a.cost << ";"
+		<< a.d_count << ';'
+		<< a.details->name << ";"
+		<< a.details->description << ';';
+	FCLOSE;
+}
+Product CreateProduct() {
+	Product p;
+	string bag;
+	INPUT(p.name);
+	INPUT(p.cost);
+	INPUT(p.d_count); BAG;
+	p.details = new Detail[p.d_count];
+	for (int i = 0; i < p.d_count; i++) p.details[i] = CreateDetail();
+	Write(p);
+	return p;
+}
+
+void AddProduct(Product*& a, int& n, string filename) {
+	Product* temp = new Product[n + 1];
+	for (int i = 0; i < n; i++) {
+		temp[i] = a[i];
+		delete[]a;
+		temp[n] = CreateProduct();
+		a = temp;
+		temp = nullptr;
+		n++;
+	}
+	Update(a, n, filename);
+}
+
+void Print(Product p) {
+	PRINT(p.name);
+	PRINT(p.cost);
+	cout << "Details: " << endl;
+	for (int i = 0; i < p.d_count; i++) Print(p.details[i]);
+}
+void Print(Product* ps, int n) {
+	for (int i = 0; i < n; i++) {
+		Print(ps[i]);
+		LINE;
+	}
+}
+
+void Read(Product*& ps, int n) {
+	ROPEN("products.csv");
+	string temp;
+	for (int i = 0; i < n; i++) {
+		getline(file, ps[i].name, ';');
+		getline(file, temp, ';');
+		ps[i].cost = stoi(temp);
+		getline(file, temp, ';');
+		ps[i].d_count = stoi(temp);
+		ps[i].details = new Detail[ps[i].d_count];
+		for (int j = 0; j < ps[i].d_count; j++) {
+			getline(file, ps[i].details[j].name, ';');
+			if (j == ps[i].d_count - 1) getline(file, ps[i].details[j].description);
+			else getline(file, ps[i].details[j].description,';');
+		}
+	}
+	FCLOSE;
+}
+
+void PrintWithDetail(Product* ps, int n) {
+	string name, description;
+	INPUT(name);
+	INPUT(description);
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < ps[i].d_count; j++) {
+			if (CheckDetail(ps[i].details[j], name, description)) {
+				Print(ps[i]); LINE;
+				break;
+			}
+		}
+	}
+}
+
+void EditProduct(Product*& a, int& n, int index) 
+{
+	for (int i = 0; i < n; i++) {
+		a[index] = CreateProduct();
+	}
+
+}
+
+void RemoveProduct(Product*& a, int& n) {
+	string name; cin >> name;
+	int index; cin >> index;
+	Product* temp = new Product[n - 1];
+	int k = 0;
+	for (int i = 0; i < n; i++) {
+		if (i != index) {
+			temp[k] = a[i];
+			k++;
+		}
+	}
+	delete[]a;
+	a = temp;
+	n--;
+
+}
+
+
+
+
+
+void Update(Product*& a, int& n, string filename) {
+	WOPEN("products.csv");
+	for (int i = 0; i < n; i++) {
+		file << a[i].name << ";"
+			<< a[i].cost << ";"
+			<< a[i].d_count << ";";
+		for (int j = 0; j < a[j].d_count; j++) {
+			file << a[j].details;
+		}
+			/*<< (a[i].details.color + ";" + a[i].details.materials + ";" +
+				a[i].details.memory + ";" + a[i].details.processor) << endl;*/
+	}
+	file.close();
+}
