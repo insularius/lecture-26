@@ -1,0 +1,252 @@
+#pragma once
+#include "Player.h"
+
+struct Team {
+	int id;
+	string name;
+	string country; 
+	int p_count;
+	Player* players;
+};
+
+Team CreateTeam() {
+	Team a;
+	string bag;
+	INPUT(a.id); getline(cin, bag);
+	INPUT_GL(a.name);
+	INPUT_GL(a.country);
+	INPUT(a.p_count); getline(cin, bag);
+	a.players = new Player[a.p_count];
+	for (int i = 0; i < a.p_count; i++)
+		a.players[i] = CreatePlayer();
+	return a;
+}
+
+void Print(Team t) {
+	PRINT(t.id);
+	PRINT(t.name);
+	PRINT(t.country);
+	Print(t.players, t.p_count);
+}
+
+void Print(Team*& ts, int n) {
+	for (int i = 0; i < n; i++) {
+		Print(ts[i]); LINE;
+	}
+}
+
+void Read(Team*& ts, int n) {
+	string temp;
+	ifstream f1(FILENAME1);
+	for (int i = 0; i < n; i++) {
+		getline(f1, temp, ';'); 
+		ts[i].id = stoi(temp);
+		getline(f1, ts[i].name, ';');
+		getline(f1, ts[i].country, ';');
+		getline(f1, temp);
+		ts[i].p_count = stoi(temp);
+		ts[i].players = new Player[ts[i].p_count];
+	}
+	f1.close();
+	f1.open(FILENAME2);
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < ts[i].p_count; j++) {
+			getline(f1, temp, ';'); 
+			ts[i].players[j].number = stoi(temp);
+			getline(f1, ts[i].players[j].name, ';');
+			getline(f1, ts[i].players[j].position);
+		}
+	}
+	f1.close();
+}
+
+void Write(Team t) {
+	ofstream f(FILENAME1, ios::app);
+	f << t.id << ";" 
+		<< t.name << ";" 
+		<< t.country << ";" 
+		<< t.p_count << endl;
+
+	f.close();
+	f.open(FILENAME2, ios::app);
+	for (int i = 0; i < t.p_count; i++) {
+		f << t.players[i].number << ";"
+			<< t.players[i].name << ";"
+			<< t.players[i].position << endl;
+	}
+	f.close();
+}
+
+
+void Write(Team*& ts, int n) {
+	ofstream f(FILENAME1, ios::trunc); f.close();
+	f.open(FILENAME2, ios::trunc); f.close();
+	for (int i = 0; i < n; i++) Write(ts[i]);
+}
+
+void FindPlayerByName(Team*& ts, int n) {
+	string name;
+	INPUT_GL(name);
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < ts[i].p_count; j++) {
+			if (ts[i].players[j].name == name) {
+				cout << name << " играет в " << ts[i].name << endl;
+			}
+		}
+	}
+}
+
+void FindPlayerByPosition(Team*& ts, int n) {
+	string position;
+	INPUT_GL(position);
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < ts[i].p_count; j++) {
+			if (ts[i].players[j].position == position) {
+				cout << ts[i].name << "\t" <<ts[i].players[j].name << endl;
+			}
+		}
+	}
+}
+
+
+
+
+
+#include "team.h"
+
+int main() {
+	RUS;
+	int n = 2;
+	Team* ts = new Team[n];
+	Read(ts, n);
+	Print(ts, n);
+	FindPlayerByName(ts, n);
+	FindPlayerByPosition(ts, n);
+}
+
+
+
+
+
+
+#pragma once
+#include "imports.h"
+
+struct Player {
+	int number;
+	string name;
+	string position;
+};
+
+Player CreatePlayer() { //создание игрока
+	Player a;
+	string bag;
+	INPUT(a.number); getline(cin, bag);
+	INPUT_GL(a.name);
+	INPUT_GL(a.position);
+	return a;
+}
+
+void Print(Player a) {  //принт информации о игроке
+	cout << "\t" << a.number << "\t" 
+		<< a.name << "\t" << a.position << endl;
+}
+
+void Print(Player* ps, int n) { //принт массива игроков
+	for (int i = 0; i < n; i++) {
+		Print(ps[i]);
+	}
+}
+
+void AddPlayer(Player*& ps, int& n) {
+	Player* temp = new Player[n + 1];
+	for (int i = 0; i < n; i++) 
+		temp[i] = ps[i];
+		delete[]ps;
+		temp[n] = CreatePlayer();
+		ps = temp;
+		n++;
+	
+}
+
+void RemovePlayer(Player*& ps, int& n) {
+	int num;
+	string bag;
+	INPUT(num); getline(cin, bag);
+	Player* temp = new Player[n - 1];
+	int k = 0;
+	for (int i = 0; i < n; i++) {
+		if (ps[i].number != num) {
+			temp[k] = ps[i];
+			k++;
+		}
+	}
+	delete[]ps;
+	ps = temp;
+	n--;
+}
+
+
+
+
+
+
+10;Месси;Нападающий
+3;Жерар Пике;Защитник
+5;Серджи Бускетс;Полузащитник
+2;Хан Соло;Вратарь
+7;Чуи Чубакка;Защитник
+1;Джабба Хат;Защитник
+15;Мейс Винду;Нападающий
+
+
+
+1123;Ф.К.Барселона;Испания;3
+4323;Ф.К.Ливерпуль;Англия;4
+
+
+#pragma once
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <Windows.h>
+using namespace std;
+#define INPUT(x) cout<<"Enter "<<(#x)<<" : "; cin>>x
+#define INPUT_GL(x) cout<<"Enter "<<(#x)<<" : "; getline(cin,x)
+#define PRINT(x) cout<<(#x)<<" = "<<x<<endl
+#define ROPEN(filename) ifstream file(filename)
+#define WOPEN(filename) ofstream file(filename)
+#define WCOPEN(filename) ofstream file(filename, ios::app)
+#define FCLOSE file.close()
+#define RUS SetConsoleCP(1251); SetConsoleOutputCP(1251)
+#define LINE cout<<"-------------------------"<<endl;
+#define FILENAME1 "teams.csv"
+#define FILENAME2 "players.csv"
+
+
+int CountInFile(string filename) {
+    int count = 0;
+    char c;
+    ifstream file(filename);
+    while (!file.eof()) {
+        file.get(c);
+        if (c == '\n') count++;
+    }
+    return count - 1;
+}
+
+
+template <typename T>
+void AddTemplate(T*& a, int& n, T(*Create)()) {
+    T* temp = new T[n + 1];
+    for (int i = 0; i < n; i++) 
+        temp[i] = a[i];
+        delete[]a;
+        temp[n] = Create();
+        a = temp;
+        n++;
+    
+}
+
+
+
